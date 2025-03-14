@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="01_autogrid.css">
+    <title>Display Grid 01_autogrid</title>
+</head>
+<body>
+    <h3>Cuando a grid-template-columns le das una medida auto, calcula el espacio que hay libre en la fila y se lo da a las columnas que tienen como medida "auto". Se le puede dar "auto" a las columnas que quieras.</h3>
+    <h4>Cuando a grid-template-rows le das una medida auto, calcula el espacio que hay libre en la columna y se lo da a las filas que tienen como medida "auto".  El grid debe tener un height. Se le puede dar "auto" a las filas que quieras.</h4>
+    
+    <div class="grid">
+        <div class="grid-item"> 1_auto_auto_auto_auto_auto</div>
+        <div class="grid-item"> 2</div>
+        <div class="grid-item"> 3</div>
+        <div class="grid-item"> 4</div>
+        <div class="grid-item"> 5</div>
+        <div class="grid-item"> 6</div>
+    </div>
+    <h5>    Si le das la medida de fr coge todo el contenido y lo reparte entre las cajas</h5>
+    <div class="grid-fr">
+        <div class="grid-item-fr"> 1_Medidas de fr</div>
+        <div class="grid-item-fr"> 2</div>
+        <div class="grid-item-fr"> 3</div>
+        <div class="grid-item-fr"> 4</div>
+        <div class="grid-item-fr"> 5</div>
+        <div class="grid-item-fr"> 6</div>
+    </div>
+</body>
+</html>

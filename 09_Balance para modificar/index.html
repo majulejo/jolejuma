@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<title>creandobalance</title>
+</head>
+<link rel="stylesheet" href="balance.css">        
+<body>
+    
+	<h1>Balance</h1>
+        <div class="navbar">
+            <section class="nav__item">
+				<a href="box1">Box 1</a>
+                <a href="box2">Box 2</a>
+                <a href="box3">Box 3</a>
+                <a href="box4">Box 4</a>
+                <a href="box5">Box 5</a>
+                <a href="box6">Box 6</a>
+                <a href="box7">Box 7</a>
+                <a href="box8">Box 8</a>
+                <a href="box9">Box 9</a>
+                <a href="box10">Box 10</a>
+                <a href="box11">Box 11</a>
+                <a href="box12">Box 12</a>
+            </section>
+        </div>
+		<div class="constantes__item">
+            <h2>Peso y Horas</h2>
+        <div class="form_input"><input type="number" placeholder="Peso en kg"> </div>
+        <div class="form_input"><input type="number" placeholder="Horas para balance"></div>
+        </div>
+		
+        <div class="input__ingresos">
+                <h2>INGRESOS</h2>
+                    <ul class="input_ingresos-ul">
+                        <li><label>Midazolan</label><input id="midazolan-box${i}" class="input__ingresos-item" type="number" placeholder="Midazolan"></li>
+                        <li><label>Fentanest</label><label><input id="fentanest-box${i}" class="input__ingresos-item" type="number" placeholder="Fentanest"></label></li>
+                        <li><label>Propofol</label><label><input id="propofol-box${i}" class="input__ingresos-item" type="number" placeholder="Propofol"></label></li>
+                        <li><label>Remifentanilo</label><label><input id="remifentanilo-box${i}" class="input__ingresos-item" type="number" placeholder="Remifentanilo"></label></li>
+                        <li><label>Dexdor</label><label><input id="dexdor-box${i}" class="input__ingresos-item" type="number" placeholder="Dexdor"></label></li>                
+                        <li><label>Noradrenalina</label><label><input id="noradrenalina-box${i}" class="input__ingresos-item" type="number" placeholder="Noradrenalina"></label></li>    
+                        <li><label>Insulina</label><label><input id="insulina-box${i}" class="input__ingresos-item" type="number" placeholder="Insulina"></label></li>
+                        <li><label>Sueroterapia 1</label><label><input type="number" id="sueroterapia1-box${i}" class="input__ingresos-item" placeholder="Sueroterapia 1"></label></li>
+                        <li><label>Sueroterapia 2	</label><label><input type="number" id="sueroterapia2-box${i}" class="input__ingresos-item" placeholder="Sueroterapia 2"></label></li>
+                        <li><label>Sueroterapia 3</label><label><input type="number" id="sueroterapia3-box${i}" class="input__ingresos-item" placeholder="Sueroterapia 3"></label></li>
+                        <li><label>Medicación</label><label><input type="number" id="medicacion-box${i}" class="input__ingresos-item" placeholder="Medicación"></label></li>
+                        <li><label>Oral</label><label><input type="number" id="oral-box${i}" class="input__ingresos-item" placeholder="Oral"></label></li>   
+                        <li><label>Enteral</label><label><input type="number" id="enteral-box${i}" class="input__ingresos-item" placeholder="Enteral"></label></li>   
+                        <li><label>Parenteral</label><label><input type="number" id="parenteral-box${i}" class="input__ingresos-item" placeholder="Parenteral"></label></li>   
+                        <li><label>Sangre/Plasma</label> <label><input type="number" id="sangreplasma-box${i}" class="input__ingresos-item" placeholder="Sangre/Plasma"></label></li>   
+                        <li><label>Agua Endógena</label><label><input id="agua-endogena-box${i}" class="input__ingresos-item" type="number" placeholder="Agua Endógena" readonly></label></li>   
+                    </ul>	
+                </form>
+            </table>
+        </div>
+        <div class="input__perdidas">
+            <thead>
+                <h2>PERDIDAS</h2>
+                    <form>
+                <ul>
+                    <li><label>Diuresis</label><input id="diuresis-box${i}" class="input__perdidas-item" type="number" placeholder="Diuresis"></li>   
+                    <li><label>Vómitos Sudor Fiebre Tqn</label><input id="vofitq-box${i}" input__perdidas-item type="number" placeholder="Vómitos Sudor Fiebre Tqn"></li>
+                    <li><label>Fiebre >37°C</label><input id="horas-fiebre37-box${i}" input__perdidas-item type="number" min="0" max="24" placeholder="0-24" oninput="validateMaxValue(this, 24) ">
+                    <input id="resultado-fiebre37-box${i}" class="input__perdidas-item"type="number" placeholder="Fiebre >37°C"  readonly></li>
+                    <li><label>Fiebre >38°C</label><input id="horas-fiebre38-box${i}" class="input horas" type="number" min="0" max="24" placeholder="0-24" oninput="validateMaxValue(this, 24) ">
+                    <input id="resultado-fiebre38-box${i}" class="input__perdidas-item" type="number" placeholder="Fiebre >38°C"  readonly>
+                    <li><label>Fiebre >39°C</label><input id="horas-fiebre39-box${i}" class="input horas" type="number" min="0" max="24" placeholder="0-24" oninput="validateMaxValue(this, 24) ">
+                    <input id="resultado-fiebre39-box${i}" class="input__perdidas-item" type="number" placeholder="Fiebre >39°C" readonly></li>
+                    <li><label>Rpm >25</label><input id="horas-rpm25-box${i}" class="input horas" type="number" min="0" max="24" placeholder="0-24" oninput="validateMaxValue(this, 24) ">
+                    <input id="resultado-rpm25-box${i}" class="input__perdidas-item" type="number" placeholder="Rpm >25" readonly></li>
+                    <li><label>Rpm >35</label><input id="horas-rpm35-box${i}" class="input horas" type="number" min="0" max="24" placeholder="0-24" oninput="validateMaxValue(this, 24) ">
+                    <input id="resultado-rpm35-box${i}" class="input__perdidas-item" type="number" placeholder="Rpm >35" readonly></li>
+                    <li><label>Sng</label><label><input type="number" id="sng-box${i}" class="input perdida" placeholder="Sng"></label>                </li>
+                    <li><label>Hdfvvc</label><label><input type="number" id="hdfvvc-box${i}" class="input__perdidas-item" placeholder="Hdfvvc"></label>                </li>
+                    <li><label>Drenajes</label><label><input type="number" id="drenajes-box${i}" class="input__perdidas-item" placeholder="Drenajes"></label>                </li>
+                    <li><label>Control de Residuos</label><input type="number" id="controlderesiduos-box${i}" class="input__perdidas-item" placeholder="Control de Residuos"></li>
+                    <li><label>Pérdidas Insensibles</label><input id="perdidas-insensibles-box${i}" class="input__perdidas-item" type="number" placeholder="Pérdidas Insensibles" readonly></li>
+                    <li><label>Cálculo de Vómitos, Sudor, Fiebre y Tqn</label><input type="number" id="fuerafluidos-box${i}" class="input__perdidas-item" placeholder="Vómitos,Sudor,Fiebre,Tqn" readonly></li>
+                    </ul>    
+                </div>
+        <button class="button" onclick="clearData(${i})">Borrar Datos</button>
+    
+</body>
+</html>

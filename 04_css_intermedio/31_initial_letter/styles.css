@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 ;
+    font-family: sans-serif;
+}
+.box {
+font-size: 15px;
+padding: 0 40px;
+}
+p::first-letter {
+    initial-letter: 7 7;
+    padding: 10px;
+    padding-bottom: 0;
+    color: #695;
+    font-family: 'Times New Roman', Times, serif;
+}

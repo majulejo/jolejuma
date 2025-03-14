@@ -1,0 +1,20 @@
+/* GRADIENTES */
+/* INDEX.HTML */
+body{
+background-color: #f00;
+margin: 0;
+}
+.box{
+width: 300px;
+height: 300px;
+margin: 0;
+background:linear-gradient(#000,transparent);
+width: 100%;
+}
+h1{
+margin: 0;
+color: #fff;
+text-align: center;
+padding: 20px;
+font-family: sans-serif;
+}

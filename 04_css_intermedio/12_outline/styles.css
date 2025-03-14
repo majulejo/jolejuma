@@ -1,0 +1,37 @@
+body { 
+    background-color: #ccc;
+    font-family: sans-serif;
+    margin: 0;
+}
+.box {
+    width: 200px;
+    background-color: #800;
+    margin: auto;
+    margin-top: 50px;
+    border: 5px solid #fff;
+    outline-width: 10px;   /*ANCHURA DEL RECUADRO QUE RODEA EL BORDE DE ALREDEDOR DE LA CAJA*/
+    outline-color: #008;/*COLOR DEL RECUADRO QUE RODEA EL BORDE DE ALREDEDOR DE LA CAJA*/
+    outline-style: solid;/*TIPO DEL RECUADRO QUE RODEA EL BORDE DE ALREDEDOR DE LA CAJA*/
+    outline-offset: 5px;/*SEPARACION DEL RECUADRO QUE RODEA EL BORDE DE ALREDEDOR DE LA CAJA*/
+}
+.box:hover {
+    outline: 10px solid #c80;
+}
+input {
+    margin: 50px;
+    border: none;
+    border-top: 3px solid #000;
+    outline: 6px solid #008;
+    outline-offset: 5px;
+    padding: 6px;
+    transition: outline .4s, outline-offset .2s;
+    color: #c80;
+}
+input:focus {
+    border-color: #008;
+    color: #008;
+}
+input:focus-visible {
+    outline: none;
+
+}

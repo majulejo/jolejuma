@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="05_grid_auto_fit.css">
+    <title>Display Grid 05_grid_repeat_auto_fill</title>
+</head>
+<body>
+    <h5>auto-fit se usa cuando hay muchos item</h5>
+    <h5>Con auto-fit cuando se agranda el navegador, si el tamaño es el suficiente para que entre otra columna, deja que se agregue otra columna. El tamaño lo define auto-fit,minmax(150px,1fr). Si el tamaño del navegador disminuye, se van creando nuevas filas.Con auto-fit   se adapta al navegador.</h5>
+    <div class="grid">
+        <div class="grid-item"> 1</div>
+        <div class="grid-item"> 2</div>
+        <div class="grid-item"> 3</div>
+        <div class="grid-item"> 4</div>
+        <div class="grid-item"> 5</div>
+        <div class="grid-item"> 6</div>
+        <div class="grid-item"> 7</div>
+        <div class="grid-item"> 8</div>
+        <div class="grid-item"> 9</div>        
+    </div>
+    <!--auto-fill-->
+    <h5>auto-fill</h5>
+    <h5>Con auto-fill va a agrandar el tamaño hasta donde le digamos pero no se va a adaptar al navegador, va a dejar huecos libres.</h5>
+    <div class="grid-autofill">
+        <div class="grid-item-autofill"> 1</div>
+        <div class="grid-item-autofill"> 2</div>
+        <div class="grid-item-autofill"> 3</div>
+        <div class="grid-item-autofill"> 4</div>
+        </div>
+</body>
+</html>

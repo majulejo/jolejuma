@@ -1,0 +1,29 @@
+body{
+    coloR:BROWN;
+    background-color: antiquewhite;
+    padding: 20px 100px;
+}
+div{
+    color: green;
+    width: 100%;
+} 
+h1{
+    color:blue;
+}
+H2{
+    color: unset;
+}
+h3{
+    color: REVERT;
+}
+h4{
+    color: INHERIT;
+}
+h5{
+    color: purple;
+}
+p{
+    color:initial;
+    background-color: initial;
+}
+/*Como h1 no tiene color de texto, hereda el superior que es el de div y como tampoco tiene background ni el p, heredan el color de fondo del div y el resto de propiedades que no tienen definidas, */

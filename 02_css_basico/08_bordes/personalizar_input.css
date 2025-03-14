@@ -1,0 +1,19 @@
+body{
+background-color: rgb(53, 53, 54);
+}
+input{
+color: rgb(82, 129, 6);
+background-color: rgb(63, 61, 61);
+margin: 5PX;
+padding: 5px 9px;
+border: 2px;
+border-style: solid; 
+border-color: rgb(35, 36, 35);   
+border-top-left-radius: 5px;
+border-bottom: none;
+border-right: none;
+}
+.submit{
+background-color: brown;
+color: blue;
+}

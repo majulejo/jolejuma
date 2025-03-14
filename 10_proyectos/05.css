@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffb18c;
+    --text-color: #333;
+    --dark-color: rgb(255, 130, 77);
+    --rrss-color: #0a7baf;
+    font-family: Montserrat;
+}
+body, div, ul, li, a, h1, h2, h3, h4, p {
+margin: 0;
+padding: 0;
+}
+
+
+body {
+    background-image: url(../07_imagenes_ejercicios/fondo.gif);
+    height: 200dvh;
+    background-size: cover;
+    background-position:50%, 50%; 
+}
+
+header {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    mix-blend-mode: difference;
+}
+
+.text-container {
+min-height: 100dvh;
+position: fixed;
+top: 0;
+display: flex;
+font-size: clamp( 1rem, 5vw, 10rem);
+color: var(--text-color);
+font-weight: 600;
+justify-content: space-between;
+width: 100%;
+align-items: center;
+padding: 3dvw;
+animation: aparecer-texto both;
+animation-timeline: scroll();
+animation-range-start: 20%;
+}
+
+.left-text {
+    color: var(--dark-color);
+    filter: drop-shadow(0px 0px 1px var(--dark-color)) drop-shadow(0px 0px 9px var(--dark-color));
+}
+
+.right-text {
+    font-weight: 800;
+    color: #34e01d;
+}
+
+img {
+    filter: grayscale();
+    position: fixed;
+    top: 0;
+    animation: aparecer-img both;
+    animation-timeline: scroll();
+    min-height: 100dvh;
+    mix-blend-mode: darken;
+}
+
+
+@keyframes aparecer-img {
+    0%{
+        opacity: 0;
+        filter: grayscale();
+        translate: 0 -20%;
+        scale: .7;
+    }
+    100%{
+        opacity: 1;
+        filter: grayscale();
+        translate: 0 0;
+        scale: 1;
+    } 
+}
+
+
+@keyframes aparecer-texto {
+    0%{
+        opacity: 0;
+        translate: 0 20%;
+        scale: 2;
+    }
+    100%{
+        opacity: 1;
+        filter: grayscale();
+        translate: 0 0;
+        scale: 1;
+    } 
+}
+
+
+/*------RRSS-------*/
+
+.text-rrss  {
+    min-height: 100dvh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    color: var(--rrss-color);
+    font-weight: 400;
+    justify-content: space-between;
+    width: 100%;
+    align-items: end;
+    padding: 20rem 7rem;
+    animation: aparecer-rrss both;
+    animation-timeline: scroll();
+    animation-range-start: 5%;
+    }
+    
+    .left-rrss {
+        color: var(--rrss-color);
+        filter: drop-shadow(0px 0px 1px var(--dark-color)) drop-shadow(0px 0px 9px var(--dark-color));
+    }
+    
+    .right-rrss {
+        color: #ffff00;
+        filter: drop-shadow(0px 0px 1px var(--dark-color)) drop-shadow(0px 0px 9px var(--dark-color));
+
+    }
+        
+    a {
+        color: var(--rrss-color);
+        font-size: clamp( .5rem, 9vw, 4rem);
+        mix-blend-mode:luminosity;
+        display: flex;
+        flex-direction: column;
+    }
+        
+    @keyframes aparecer-rrss {
+        0%{
+            opacity: 0;
+            translate: 0 -20%;
+            scale: 2;
+        }
+        100%{
+            opacity: 1;
+            filter: grayscale();
+            translate: 0 0;
+            scale: 1;
+        } 
+    }
+    

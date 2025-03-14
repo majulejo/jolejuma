@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 ;
+    font-family: sans-serif;
+    background-color: #ccc;
+    padding: 20px;
+}
+.box {
+    --color-principal:#851;
+    background-color: #678;
+    display: grid;
+    place-content: center;
+    color: #fff;  
+    margin: 120px auto;
+    padding: 0 40px;
+    font-size: 2em;
+    width: clamp(800px, 80%, 1400px);
+    font-size: clamp(1.4rem,2.2vw,5rem);
+    border: 6px solid #000;
+
+}
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 0;
+}
+box {
+    width: min(900px, 70%);
+    width: max(900px, 70%);
+    width: clamp(800px, 80%, 1400px);
+    font-size: clamp(1.4rem,2.2vw,5rem);
+}

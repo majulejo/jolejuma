@@ -1,0 +1,32 @@
+/* INDEX.HTML */
+/* SOMBRAS */
+/* SOMBREADO */
+body{
+background: #fff;
+}
+.box{
+background-color: #f8f8f8a;
+width: 300px;
+height: 180px;
+margin: auto;
+margin-top: 50px;
+border-top: 4px solid #333a;
+border-radius: 5px;
+box-shadow: 0 0 100px 0 #000;
+box-sizing: border-box;
+padding-top: 5px;
+
+}
+h2{
+color: #444;
+text-align: center;
+font-size: 22px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+color: #331;
+font-size: 10px;
+text-align: justify;
+letter-spacing: 1px;
+margin: 0px 10px 30px 10px;
+}

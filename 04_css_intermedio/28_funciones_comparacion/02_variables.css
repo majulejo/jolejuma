@@ -1,0 +1,48 @@
+:root{
+    --tamaño-principal:2.4rem; 
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 ;
+    font-family: sans-serif;
+    background-color: #ccc;
+    padding: 20px;
+}
+.box, .box2 {
+    --color-principal:#851;
+    --color-secundario: #ad7;
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    display: grid;
+    place-content: center;
+    color: #fff;  
+    margin: 120px auto;
+    padding: 0 40px;
+    font-size: 2em;
+    width: clamp(800px, 80%, 1400px);
+    font-size: clamp(var(--tamaño-principal),2.2vw,5rem);
+    border: 6px solid #000;
+}
+.box2 {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    border: 9px solid var(--color-property);
+    overflow: 5px solid blue;
+
+}
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 0;
+}
+body > p {/*--  no funcionan las variables porque los colores de variables se encuentran en las cakas box y no en el root o en el body  --*/
+background-color: var(--color-principal);
+border: 3px solid var(--color-secundario);
+font-size: 40px;
+}
+@property --color-property {  /*--  esto es para crear una nueva variable  --*/
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #78e;
+}

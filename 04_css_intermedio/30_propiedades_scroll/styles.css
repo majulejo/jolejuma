@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 ;
+    font-family: sans-serif;
+}
+.box {
+font-size: 15px;
+padding: 0 40px;
+margin: 0 auto;
+border: 6px solid #000;
+width: 50vw;
+height: 100vh;
+overflow: scroll;
+scroll-behavior: smooth;
+scrollbar-color: #48a #ff0;
+scrollbar-width: thin ;
+}
+.crecer {
+    height: 200vh;
+}

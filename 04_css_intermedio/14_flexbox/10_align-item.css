@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ccc;
+    }
+div, body {
+    box-sizing: border-box;
+}
+div {
+    background-color: #fff;
+}
+h4 {
+    color: #008;
+    text-align: center;
+    font-weight: bold;
+}/*Align-self varios item con flex: 1 1 150px*/
+.flexbox {
+    display: flex;  
+    flex-flow: row wrap; 
+    border: 1px solid #000;
+    margin: 10px;
+    height: 300px;
+    padding: 10px;
+    align-items: center;
+    background-color: transparent;
+    gap: 20px;
+}
+.flex-item {
+    background-color: #b45;    
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1 1 100px;    
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.item-1 {
+    align-self: flex-start ;
+    background-color: #08e;
+    flex: 2 1 200px;    
+}
+.item-2 {
+    align-self: flex-end ;
+    background-color: #4f5;
+    flex: 2 1 300px;    
+}
+.item-3 {
+    align-self: flex-start ;
+    background-color: #082;
+    flex: 2 1 300px;    
+}
+.item-5 {
+    align-self: flex-end ;
+    background-color: #d8e;
+    flex: 2 1 190px;    
+}
+/*-- flexbox2 --*/
+.flexbox2 {
+    display: flex;  
+    flex-flow: row wrap; 
+    border: 2px solid #000;
+    margin: 20px;
+    height: 300px;
+    align-items: center;
+    background-color: transparent;
+}
+.flex-item2 {
+    background-color: #b45;    
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1 1 100px;    
+    border-radius: 5px;
+}
+.flex-item2:nth-child(2n) {
+    background-color: #643;
+}
+.flex-item2.item-5 {
+    font-size: 45px;
+    align-self: baseline ;/*--podemos darle la alineación start, center, end, baseline y strech--*/
+    background-color: #48e;
+    flex: 2 1 300px;    
+}
+.flex-item2:last-child {
+    background-color: #fff;
+    align-self: stretch;
+    /*--podemos darle la alineación start, center, end, baseline y strech--*/
+}

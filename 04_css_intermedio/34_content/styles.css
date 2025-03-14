@@ -1,0 +1,35 @@
+/* Estilo base del botón */
+.btn {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Agregar un pseudo-elemento ::after para mostrar "¡Nuevo!" */
+.btn::after {
+    content: "¡Nuevo!"; /* Contenido generado */
+    position: absolute;
+    top: -10px; /* Posicionamiento arriba del botón */
+    right: -40px; /* Alineación hacia la derecha */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+/*---Explicación:
+HTML : Creamos un botón básico con la clase btn.
+CSS :
+Estilizamos el botón con colores y dimensiones.
+Usamos el pseudo-elemento ::after para agregar el texto "¡Nuevo!" como un elemento adicional que aparece fuera del botón.
+La propiedad content es la que define el texto que queremos mostrar en este pseudo-elemento.
+Usamos propiedades como position, top y right para posicionar el texto "¡Nuevo!" cerca del botón.
+Resultado:
+Cuando abras este código en tu navegador, verás un botón azul con el texto "Haz clic aquí". Justo encima y a la derecha del botón, aparecerá una etiqueta roja con el texto "¡Nuevo!".
+
+Si tienes alguna duda o quieres otro ejemplo, ¡avísame! 😊--*/

@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ccc;
+}
+.box {
+    width: 240px;
+    height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #fff;
+    border: 1px solid #0006;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 30px 10px 0 10px ;
+
+}
+.box2 {
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #f66;
+    border: 1px solid #0006;
+    white-space: normal;
+    word-wrap: anywhere;
+    text-wrap: pretty;  /*SE USA PARA BALANCEAR PARRAFOS*/
+    padding: 30px 10px 0 10px ;
+
+}
+h1 {
+    text-wrap: balance;  /*SE USA PARA BALANCEAR TEXTOS*/
+}
+.box3 {
+    width: 240px;              /* Ancho fijo */
+    height: 50px;              /* Alto fijo */
+    margin: auto;              /* Centrado horizontal */
+    margin-top: 50px;          /* Espaciado superior */
+    background-color: #33f;    /* Fondo azul */
+    border: 1px solid #0006;   /* Borde con transparencia */
+    white-space: nowrap;       /* Evitar que el texto haga saltos de línea */
+    text-overflow: ellipsis;   /* Mostrar puntos suspensivos cuando el texto se desborda */
+    overflow: hidden;          /* Ocultar el texto desbordado */
+    padding: 30px 10px 0 10px ;
+
+}
+.box4 {
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #f22;
+    border: 1px solid #0006;
+    white-space: NORMAL;
+    font-weight: bold;
+    padding: 30px 10px 0 10px ;
+    
+}

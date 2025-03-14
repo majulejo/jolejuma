@@ -1,0 +1,30 @@
+body{
+background-color: coral;
+font-family: sans-serif;
+color: white;
+}
+.card{
+background-color: rgb(243, 186, 140);
+text-align: center;
+width: 400px;
+margin: auto;
+margin-top: 50px;
+}
+h1{
+padding-top: 15px;
+font-size: 20px;
+margin: 15;
+}
+h2{
+font-size: 15px;
+font-weight: 900;
+letter-spacing: 2px;
+}
+p{
+font-size: 11px;
+padding: 20px 15px ;
+text-align: justify;
+background-color: rgb(240, 164, 129);
+letter-spacing: normal;
+
+}

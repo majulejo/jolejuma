@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #483;
+}
+
+img {
+    max-width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 23%, 24% 24%, 100% 68%, 100% 100%, 0 100%, 0 80%, 75% 85%, 0 40%);
+    border: 2px solid #000;
+}
+
+img2 {
+    clip-path: circle(40% at 15% 75%);
+    clip-path: ellipse(150px 350px at 1300px 500px);
+
+}

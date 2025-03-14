@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ccc;
+}
+div {
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*--box--*/
+.box {
+    margin: 20px;
+    background-color: #fff;
+    padding: 6px;
+    border: 4px solid #48e;
+    border-radius: 39px;
+}
+.barra-backwards {
+    padding: 40px;
+    background-color: #48e;
+    border-radius: 30px;
+    width: 10%;
+    animation-name: llenar-barra;/*--nombre de la animación--*/
+    animation-duration: 3s;/*--duración de la animación--*/
+    animation-delay: 2s;/*--tiempo que tarda en empezar la animación--*/
+    animation-fill-mode: backwards;/*--una vez terminada,se queda como antes de iniciar la transición--*/
+    animation-iteration-count: 3;/*--indica las veces que se repite la animación--*/
+    animation-direction: reverse;/*--indica la dirección de ejecución de la animación, con reverse va en la dirección en contra, de to a from.--*/
+}
+.barra-both {
+    padding: 40px;
+    background-color: #48e;
+    border-radius: 30px;
+    width: 10%;
+    animation-name: llenar-barra;/*--nombre de la animación--*/
+    animation-duration: 3s;/*--duración de la animación--*/
+    animation-delay: 1s;/*--tiempo que tarda en empezar la primera vez que se ejecuta la  animación--*/
+    animation-fill-mode: both;/*--Arranca con las propiedades del "@keyframes from" y una vez terminada,se queda como debe terminar la animación, como indica el "@keyframes to"--*/
+    animation-iteration-count: 4;/*--indica las veces que se repite la animación--*/
+    animation-direction: alternate-reverse;/*--indica la dirección de ejecución de la animación con alternate-reverse, va en la dirección en contra, vuelve y va, de to a from--*/
+}
+.barra-forwards {
+    padding: 40px;
+    background-color: #48e;
+    border-radius: 30px;
+    width: 10%;
+    animation-name: llenar-barra;/*--nombre de la animación--*/
+    animation-duration: 3s;/*--duración de la animación--*/
+    animation-delay: -1s;/*--tiempo que tarda en empezar la animación, con números negativos empieza como si llevara ya el tiempo que indica el número negativo--*/
+    animation-fill-mode: forwards;/*--Arranca con las propiedades del box, sigue con las del  "@keyframes from", y acaba  la animación, como indica el "@keyframes to"--*/
+    animation-timing-function: linear;/*--mantiene la misma velocidad desde que empieza--*/
+    animation-iteration-count: infinite;/*--indica las veces que se repite la animación--*/
+    animation-direction: alternate;/*--indica la dirección de ejecución de la animación con alternate va y vuelve--*/
+    animation-play-state: paused;/*--animación por defecto pausada--*/
+
+}
+.barra-forwards:active {
+    animation-play-state: running;/*--cuando pulsamos sobre la barra, se pone en funcionamiento y si la soltamos se detiene.--*/
+}
+@keyframes llenar-barra {
+    from {
+        width: 10%;
+        background-color: #00f;
+    }
+    to {
+        width: 100%;
+        background-color: #0f0;
+    }
+}
+

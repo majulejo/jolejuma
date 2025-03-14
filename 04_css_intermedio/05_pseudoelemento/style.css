@@ -1,0 +1,33 @@
+div{
+    padding: 5px;
+}
+h1::first-letter {
+    color:#800;
+    font-size: 3em;
+    letter-spacing: 8px;
+}
+div::first-line {
+    color:#080;
+    font-weight: bold;
+}
+div::selection{
+    background-color: #cbd113;
+    color: #65d113 ;
+}
+input::placeholder{
+    color:#008;
+    background-color:#bfe0a6 ;
+}
+li::marker{
+    color:#f7a89c;
+}
+li::before{
+    content: "Antes: ";
+    color:#2507eb;
+    padding-right: 20px;
+}
+li::after{
+    content: "Después ";
+    color:#33b57d;
+    margin-left: 20px;
+}

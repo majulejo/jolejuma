@@ -1,0 +1,12 @@
+video{
+    width: 1480px;
+    height: 720px;
+    background: #000;
+    margin: 20px;
+    padding: 30px;
+    border: 5px solid #777;    
+}
+body{
+    border: 5px solid #f00;
+
+}

@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+}
+.box {
+    margin: auto;
+    padding: 20px 50px; 
+    position: absolute;
+    width: 100%;
+    left: 200px;
+    top: 100px;
+    border: 3px solid #ddd;
+
+}
+img {
+    filter:  invert(2) drop-shadow(0px 0px 15px #000) grayscale(.5);
+}
+tipos_de_filter {
+    filter: drop-shadow(0px 0px 15px #000);
+    filter: grayscale(.6) invert(1)  drop-shadow(0px 0px 45px #080) ;
+    filter: blur(10px);
+    filter: brightness(.5);
+    filter: contrast(.5);
+    filter: grayscale(.5);
+    filter: saturate(.1);
+    filter: hue-rotate(160deg);
+    filter: opacity(0.2);
+    filter: invert(1);
+    filter: sepia(1) blur(6px);
+    filter: sepia(1) blur(6px) contrast(2);
+    filter: grayscale(.5) drop-shadow(0px 0px 15px #000) invert(2);
+}
+

@@ -1,0 +1,113 @@
+body {    
+    margin: 0;    
+    font-family: sans-serif;
+    background-color: #ddd;
+}
+body, div {    
+    box-sizing: border-box;    
+}
+h5, h4 {
+    color: #009;
+    text-align: center;
+}
+.grid {  
+    display: grid;
+    grid-template-columns: repeat(4,200px); 
+    grid-template-rows:  repeat(2,60px) ;   
+    gap: 10px;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid #000;
+}
+.grid-item:first-child {
+    justify-self:end ;
+    background-color: #cb7;
+}
+.grid-item:last-child {
+    justify-self: end;
+    background-color: #7cb;
+}
+.grid-item {
+    background-color: #75f;
+    border-radius: 16px;
+    font-size: 20px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+/*--GRID START  justify-item:start con justify-self...--*/
+.grid-start {
+    justify-items: start;
+    justify-content: end;
+
+}
+/*-- GRID CENTER  justify-item:center con justify-self--*/
+.grid-center {
+    justify-items: center;
+    justify-content: space-around;
+
+}  
+.grid-center .grid-item:first-child {
+    justify-self: start;
+    background-color: #c77;
+}
+.grid-center .grid-item:last-child {
+    justify-self: left;
+    background-color: #71b;
+}
+/*--GRID END   justify-items: end; justify-content: space-evenly;--*/
+.grid-end {
+    justify-items: end;
+    justify-content: space-evenly;
+
+}
+.grid-end .grid-item:first-child {
+    justify-self: stretch;
+    background-color: #7c7;
+}
+.grid-end .grid-item:last-child {
+    justify-self: right;
+    background-color: #b71;
+}
+/*--nuevo--*/
+/*--GRID SPACE-ARROUNDjustify-items: center;justify-content:space-arround;--*/
+
+.grid-space-arround {
+    justify-content: space-arround;
+    justify-items: end;
+}
+.grid-space-arround .grid-item:first-child {
+    justify-self: stretch;
+    background-color: #7c7;
+}
+.grid-space-arround .grid-item:last-child {
+    justify-self: right;
+    background-color: #b71;
+}
+/*--GRID SPACE-EVENLY  justify-items: center;justify-content:space-evenly;--*/
+.grid-space-evenly {  
+    justify-content:space-evenly;
+    justify-items: start;
+}
+.grid-space-evenly .grid-item:first-child {
+    justify-self: start;
+    background-color: #7c7;
+}
+.grid-space-evenly .grid-item:last-child {
+    justify-self: right;
+    background-color: #b71;
+}
+
+/*--GRID SPACE-BETWEEN--*/
+.grid-space-between {  
+    justify-items: center;
+    justify-content: space-between;
+}.grid-space-between .grid-item:first-child {
+    justify-self: end;
+    background-color: #7c7;
+}
+.grid-space-between .grid-item:last-child {
+    justify-self: right;
+    background-color: #b71;
+}

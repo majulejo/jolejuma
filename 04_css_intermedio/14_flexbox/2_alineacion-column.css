@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    }
+    h5,h6 {
+        margin: auto;
+        color: #800;
+        text-align: center;
+    }
+div, body {
+    box-sizing: border-box;
+    background-color: #ddd;
+}
+.flexboxevenlycolumn {
+    display: flex;  
+    flex-direction: column; /*dirección de los item*/
+    flex-wrap: wrap;/*nowrap se adapta el tamaño del item al de la caja*/
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    width: 300px;
+    justify-content: space-evenly ;
+    /* a parte de center se puede usar start o end e irá al principio o final de la caja contenedora*/
+    /*space-around: coge la distancia entre el item con respecto al borde y la mantiene, lo que pasa es que entre dos item hay dos distancias*/
+    /* 
+    space-between:primer elemento al principio del eje. ultimo elemento al final del eje y al resto los distribuye uniformemente*/
+    /*space-evenly distribuyen los espacios igual entre los item y los bordes*/
+}
+.flexboxaroundcolumn {
+    display: flex;  
+    flex-direction: column; 
+    flex-wrap: wrap;
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    justify-content: space-around ;
+}
+.flexboxbetweencolumn{
+    display: flex;  
+    flex-direction: column; 
+    flex-wrap: wrap;
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    justify-content: space-between ;
+}
+.flexboxstartcolumn {
+    display: flex;  
+    flex-direction: column; 
+    flex-wrap: wrap;
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    justify-content: start ;
+}
+.flexboxcentercolumn {
+    display: flex;  
+    flex-direction: column; 
+    flex-wrap: wrap;
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    justify-content: center ;
+}
+.flexboxendcolumn {
+    display: flex;  
+    flex-direction: column; 
+    flex-wrap: wrap;
+    border: 2px solid #000;
+    margin: 8px 20px;
+    height: 280px ;
+    justify-content: end ;
+}
+.flex-item {
+    height: 30px;
+    background-color: #bb5;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+.flex-item:first-child {
+    background-color: #f77;
+}
+.flex-item:last-child {
+    background-color: #ff0;
+}

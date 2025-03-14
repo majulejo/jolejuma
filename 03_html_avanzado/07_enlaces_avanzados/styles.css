@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    color: #eee;
+    background: linear-gradient( to bottom, #222, #000);
+}
+h2{
+    text-align:center;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 100px;
+    font-size: 1.3em;
+    padding: 10px;
+}
+form{
+    background-color: transparent; 
+    padding: 20px 0;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 55px #fff2;
+    margin-top: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.form_input{
+    padding: 6px 20px;
+}
+input, textarea, select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: none;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 25px #0003;
+    background: transparent;
+    border-radius: 4px;
+    color: #ddd;
+}
+textarea{
+    width: 100%;
+    min-height: 102px;
+    resize: none;
+    font-family: sans-serif;
+    color: #eee;
+    form-sizing:content;
+}
+option{
+    background: #222;
+}
+label{
+    font-size: 0.93em;
+    line-height: 2;
+}
+.checkbox{
+    width: auto;
+    height: 10px;
+}
+fieldset{
+    border-radius: 5PX;
+    border: 2px solid #666;
+    margin: 20px;
+    padding: 0px 10px 15px 10px;
+
+}
+legend{
+    padding:  6px 10px ;
+    color: #777;
+    font-family:sans-serif;
+    font-size: 16px;
+}
+a{
+    color:#48e;
+    text-decoration: none;
+}

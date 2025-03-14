@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkewY Hover Example (Slow)</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .skew-container {
+      overflow: hidden;
+      width: 300px;
+      height: 200px;
+      border: 2px solid #333;
+      transition: transform 10s ease;
+    }
+    .skew-container:hover {
+      transform: skewY(360deg);
+    }
+    .skew-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="skew-container">
+    <img src="../../07_imagenes_ejercicios/reloj.png">
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body{
+background-color:#ffffff;
+font-family: sans-serif;
+color: white;
+}
+.card{
+background-color:#6ac;
+text-align: center;
+width: 300px;
+margin: auto;
+margin-top: 50px;
+padding: 20px 10px;
+box-shadow: 0 0 35px #0006;
+border-radius: 8px;
+}
+.red-card{
+    background-color:#c21d;
+text-align: center;
+width: 300px;
+margin: auto;
+margin-top: 50px;
+padding: 20px 10px;
+box-shadow: 0 0 35px #0006;
+border-radius: 8px;
+}
+.green-card{
+    background-color:rgb(102, 204, 107);
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px 10px;
+    box-shadow: 0 0 35px #0006;
+    border-radius: 8px;
+}
+.card_tittle{
+font-size: 20px;
+margin: 0;
+}
+.card_subtittle{
+font-size: 15px;
+font-weight: 700;
+letter-spacing: 2px;
+margin: 0;
+margin-top: 5px;
+}
+.card_content{
+font-size: 9px;
+padding: 10px ;
+padding-bottom: 0;
+text-align: justify;
+letter-spacing: normal;
+margin-bottom: 0;
+}
+.card_img{
+    width: 200px;
+    border-radius: 50%;
+}

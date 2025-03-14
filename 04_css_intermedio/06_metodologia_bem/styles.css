@@ -1,0 +1,21 @@
+.lista{
+    border: 2px solid #b1b7b9;
+    border-radius:  5px;
+    padding: 15px 50px;
+}
+.lista--vieja{
+    opacity: 0.3;
+    background-color: #ddd;
+}
+.lista__item{
+    color: #7D7;
+    margin: 10px 0;
+    list-style:disclosure-closed;
+}
+.item--importante{
+    color: #008;
+}
+.item--danino{
+    color: #800;
+}    
+    

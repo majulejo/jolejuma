@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+:root{
+    --color-principal:#790;
+    --alto-del-box: 200px
+}  
+    
+
+body {
+    margin: 0 ;
+    font-family: sans-serif;
+    padding: 20px;
+}
+.box {
+margin: 10px auto;
+font-size: 30px;
+font-size: clamp(1rem, 1.5vw, 2rem);
+border: 6px solid #000;
+width: calc(50% + 100px);
+}
+.box:first-child {
+    height: 100px + var(--alto-del-box);
+}
+.box:nth-child(2) {
+height: calc(100vh - var(--alto-del-box)*3 );
+overflow: auto;
+}

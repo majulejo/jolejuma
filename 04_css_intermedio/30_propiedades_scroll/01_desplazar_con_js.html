@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desplazamiento Suave con js</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 10px 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Enlace para desplazarse hacia abajo -->
+    <header>
+        <a href="#abajo" onclick="scrollToBottom(); return false;">Ir hacia abajo con js</a>
+    </header>
+
+    <!-- Contenido largo -->
+    <main id="contenido">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis semper odio. 
+            Donec euismod, augue vel bibendum cursus, nisl nisi vehicula justo, nec dictum urna eros at sapien. 
+            Sed ut quam ac nisi eleifend venenatis. Aliquam erat volutpat. Morbi vel felis sed ex tincidunt lacinia.
+        </p>
+        <p>
+            Etiam nec ante non ligula mollis faucibus. Nullam nec purus nec diam efficitur condimentum. 
+            Proin in risus vitae nulla rutrum pharetra. Integer malesuada, massa ut rhoncus molestie, 
+            lectus velit convallis lorem, a ultricies neque lacus sed tellus. Nam vel dui vel est laoreet scelerisque.
+        </p>
+        <p>
+            Aenean gravida turpis auctor, interdum arcu et, posuere mi. Suspendisse potenti. 
+            Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+            Cras ac nibh nec sapien vestibulum blandit. Curabitur fringilla leo nec libero fermentum, 
+            nec elementum metus sodales. Donec non tortor non urna accumsan varius.
+        </p>
+        <p>
+            Vivamus maximus, odio nec hendrerit suscipit, urna quam tempus urna, nec sollicitudin magna urna vel lorem. 
+            Nullam sit amet eros sit amet urna sagittis dapibus. Nunc imperdiet, urna nec finibus aliquet, 
+            quam odio consequat nisi, vel vulputate justo risus in nisl. Praesent porta lorem a nisi porttitor, 
+            nec dignissim arcu pulvinar. In hac habitasse platea dictumst.
+        </p>
+        <p>
+            Phasellus ornare, lorem non malesuada feugiat, odio felis iaculis enim, sed pellentesque sapien urna et urna. 
+            Maecenas euismod, justo sed tincidunt viverra, ex orci pharetra elit, non mattis sapien nisl et elit. 
+            Integer vel urna vel sapien placerat malesuada. Fusce ut justo auctor, dictum lorem vel, convallis odio.
+        </p>
+        <p>
+            Aliquam erat volutpat. Mauris in urna eu urna luctus fringilla. Nulla facilisi. 
+            Nullam nec purus nec diam efficitur condimentum. Proin in risus vitae nulla rutrum pharetra. 
+            Integer malesuada, massa ut rhoncus molestie, lectus velit convallis lorem, a ultricies neque lacus sed tellus.
+        </p>
+        <p>
+            Aenean gravida turpis auctor, interdum arcu et, posuere mi. Suspendisse potenti. 
+            Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+            Cras ac nibh nec sapien vestibulum blandit. Curabitur fringilla leo nec libero fermentum, 
+            nec elementum metus sodales. Donec non tortor non urna accumsan varius.
+        </p>
+        <p>
+            Vivamus maximus, odio nec hendrerit suscipit, urna quam tempus urna, nec sollicitudin magna urna vel lorem. 
+            Nullam sit amet eros sit amet urna sagittis dapibus. Nunc imperdiet, urna nec finibus aliquet, 
+            quam odio consequat nisi, vel vulputate justo risus in nisl. Praesent porta lorem a nisi porttitor, 
+            nec dignissim arcu pulvinar. In hac habitasse platea dictumst.
+        </p>
+        <p>
+            Phasellus ornare, lorem non malesuada feugiat, odio felis iaculis enim, sed pellentesque sapien urna et urna. 
+            Maecenas euismod, justo sed tincidunt viverra, ex orci pharetra elit, non mattis sapien nisl et elit. 
+            Integer vel urna vel sapien placerat malesuada. Fusce ut justo auctor, dictum lorem vel, convallis odio.
+        </p>
+        <p>
+            Aliquam erat volutpat. Mauris in urna eu urna luctus fringilla. Nulla facilisi. 
+            Nullam nec purus nec diam efficitur condimentum. Proin in risus vitae nulla rutrum pharetra. 
+            Integer malesuada, massa ut rhoncus molestie, lectus velit convallis lorem, a ultricies neque lacus sed tellus.
+        </p>
+    </main>
+
+    <!-- Enlace para desplazarse hacia arriba -->
+    <footer id="abajo">
+        <a href="#top" onclick="scrollToTop(); return false;">Ir hacia arriba con js</a>
+    </footer>
+
+    <script>
+        // Función para desplazarse suavemente hacia arriba
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Función para desplazarse suavemente hacia abajo
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>

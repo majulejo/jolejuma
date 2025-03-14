@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <title>Inherit-Unset-Revert</title>
+    <style>
+        /* Estilos generales */
+        body {
+            color: brown; /* Color por defecto para el cuerpo */
+        }
+        div {
+            color: green; /* Color por defecto para el div */
+        }
+        /* Estilos para funciones */
+        h2.unset {
+            color: unset; /* Debería tomar el color del body (brown) */
+            background-color: lightblue; /* Para distinguir unset */
+        }
+        h3.revert {
+            color: revert; /* Debería tomar el estilo predeterminado del navegador */
+            background-color: lightcoral; /* Para distinguir revert */
+        }
+        h4.inherit {
+            color: inherit; /* Toma el color del elemento padre */
+            background-color: lightgreen; /* Para distinguir inherit */
+        }
+        /* Estilo para otros elementos */
+        h5 {
+            color: purple; /* Fijo */
+        }
+        p {
+            color: inherit; /* Toma el color del elemento padre */
+        }
+    </style>
+</head>
+<body>
+    <h1>BODY COLOR BROWN, DIV COLOR GREEN , NAVEGADOR COLOR NEGRO el h1 está fuera del div, coge el color del body </h1>
+    <div> 
+        Esto está fuera de ningun h y toma el color del div.
+        <h2 class="unset">H2 UNSET DENTRO DE DIV</h2>
+        <h3 class="revert">H3 REVERT DENTRO DE DIV</h3>
+        <h4 class="inherit">H4 INHERIT DENTRO DE DIV</h4>
+        <h5>H5 COLOR PURPLE</h5>
+        <p>P INITIAL DENTRO DE DIV</p>
+        <p style="color: orange;">P STYLE COLOR ORANGE DENTRO DE DIV. Este es un párrafo con texto en color naranja, y aunque en el CSS el atributo `p` tiene marcado como `inherit`, al haber un estilo en línea, mantiene el color del `style`, que es naranja.</p>
+        <h6>H6 SIN COLOR PREDEFINIDO DENTRO DE DIV. Coge el color por encima definido, que en este caso es el del `div`.</h6>
+    <h3>revert de cualquier manera dentro de div</h3>
+    </div>
+    <h2 class="unset">H2 UNSET FUERA DE DIV</h2>
+    <h3 class="revert">H3 REVERT FUERA DE DIV</h3>
+    <h4 class="inherit">H4 INHERIT FUERA DE DIV</h4>
+    <h5>H5 COLOR PURPLE FUERA DE DIV</h5>
+    <p>P INITIAL FUERA DE DIV</p>
+    <p style="color: orange;">P STYLE COLOR ORANGE FUERA DE DIV. Este es un párrafo con texto en color naranja, y aunque en el CSS el atributo `p` tiene marcado como `inherit`, al haber un estilo en línea, mantiene el color del `style`, que es naranja.</p>
+    <h6>SIN COLOR PREDEFINIDO FUERA DE DIV. Coge el color por encima definido, que en este caso es el del `body`.</h6>
+    <h3>revert de cualquier manera fuera de div</h3>
+    <h3>revert de cualquier manera dentro de div</h3>
+
+</body>
+</html>

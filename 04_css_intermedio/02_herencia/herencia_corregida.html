@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <title>Herencia corregida</title>
+    <style>
+        /* Estilo base */
+        body {
+            color: brown; /* Color base del body */
+        }
+
+        div {
+            color: green; /* Color base del div */
+        }
+
+        h1 {
+            color: navy; /* Color fijo del H1 */
+        }
+
+        /* Para ver más claro el comportamiento */
+        h2, h3, h4, p {
+            margin: 10px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Herencia y Propiedades</h1>
+    <p>El color del texto en cada caso será determinado por el comportamiento natural de las propiedades CSS `unset`, `inherit`, `revert` e `initial`.</p>
+
+    <div>
+        <h1>H1 COLOR FIJO: NAVY</h1>
+        <h2 style="color: unset;">H2 CON `UNSET` DENTRO DE DIV</h2>
+        <h3 style="color: revert;">H3 CON `REVERT` DENTRO DE DIV</h3>
+        <h4 style="color: inherit;">H4 CON `INHERIT` DENTRO DE DIV</h4>
+        <p style="color: initial;">P CON `INITIAL` DENTRO DE DIV</p>
+        <h3>revert de cualquier manera fuera de div</h3>
+    <h3>revert de cualquier manera dentro de div</h3>
+    </div>
+
+    <h2 style="color: unset;">H2 CON `UNSET` FUERA DE DIV</h2>
+    <h3 style="color: revert;">H3 CON `REVERT` FUERA DE DIV</h3>
+    <h4 style="color: inherit;">H4 CON `INHERIT` FUERA DE DIV</h4>
+    <p style="color: initial;">P CON `INITIAL` FUERA DE DIV</p>
+    <h3>revert de cualquier manera fuera de div</h3>
+    <h3>revert de cualquier manera dentro de div</h3>
+</body>
+</html>

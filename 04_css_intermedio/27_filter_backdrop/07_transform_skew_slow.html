@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkewY Animation Example (Slow)</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #e0f7fa;
+    }
+    .skew-container {
+      overflow: hidden;
+      width: 300px;
+      height: 200px;
+      border: 2px solid #00695c;
+      animation: skewAnimation 20s infinite;
+    }
+    .skew-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes skewAnimation {
+  0% {
+    transform: skewY(0deg);
+  }
+  50% {
+    transform: skewY(180deg);
+  }
+  100% {
+    transform: skewY(360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="skew-container">
+    <img src="../../07_imagenes_ejercicios/reloj.png">
+  </div>
+</body>
+</html>

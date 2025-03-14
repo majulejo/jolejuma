@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="02_repeat.css">
+    <title>Display Grid 02_repeat</title>
+</head>
+<body>
+    <h5>Con el elemento repeat(2,350px) le decimos que repita dos columnas de 350px. Podemos decirle que repita patrones o lo que queramos</h5>
+    <div class="grid">
+        <div class="grid-item"> 1</div>
+        <div class="grid-item"> 2_repeat(2,350px)</div>
+        <div class="grid-item"> 3_repeat(2,350px)</div>
+        <div class="grid-item"> 4</div>
+        <div class="grid-item"> 5</div>
+        <div class="grid-item"> 6</div>
+        <div class="grid-item"> 7</div>
+        <div class="grid-item"> 8</div>
+        <div class="grid-item"> 9</div>
+    </div>
+    <!----minmax-->
+    <h5>Si usamos el elemento o atributo minmax podemos modificar el tamaño de una columna para que se adapte y si modificamos el tamaño del navegador, se adapte a las medidas que le hemos dado. Podemos usar repeat si tenemos varias columnas con las mismas medidas.</h5>
+    <div class="grid-minmax">
+        <div class="grid-item-minmax"> 1</div>
+        <div class="grid-item-minmax"> 2_-minmax</div>
+        <div class="grid-item-minmax"> 3_-minmax</div>
+        <div class="grid-item-minmax"> 4</div>
+        <div class="grid-item-minmax"> 5</div>
+    </div>
+</body>
+</html>

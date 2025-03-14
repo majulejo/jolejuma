@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+background-color: #cbe6f5;
+}
+div, body {
+    box-sizing: border-box;
+}
+div {
+    background-color: #bfe2f5;
+}
+
+.flexboxRR {
+    margin: 50px;
+    border: 2px solid #000;
+    display: flex;  
+    flex-direction: row-reverse;
+    flex-wrap: wrap;/*wrap no se adapta el tamaño del item al de la caja y se va hacia abajo*/
+}
+.flex-itemRR {
+    margin: 30px;
+    width: 250px;  
+    height: 80px;
+    background-color: #1f6991;
+    margin: 10px;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+.flex-itemRR:first-child {
+    background-color: #f8aaf8;
+}
+.flex-itemRR:last-child {
+    background-color: #086;
+}
+

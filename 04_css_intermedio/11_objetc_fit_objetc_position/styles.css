@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #eee;
+}
+.wolfcontain {
+    width: 400px;
+    height: 400px;
+    margin: auto;    
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid #000;
+    object-fit: contain;
+}
+
+.wolfcover {
+    width: 400px;
+    height: 400px;
+    margin: auto;    
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid #000;
+    object-fit: cover;
+}
+
+.wolffill {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: fill;
+}
+.wolffillscaledown {
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: scale-down;
+}
+.wolffillnone {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: none;
+}
+.none {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: none;
+}
+
+.wolfposition40 {
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: cover;
+    object-position: 110px 40px;
+}
+.wolfpositionbottom {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: cover;
+    object-position: bottom;
+}
+.wolfpositioncenter {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: cover;
+    object-position: center;
+}
+.wolfpositiontop {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid#000;
+    object-fit: cover;
+    object-position: top;
+}

@@ -1,0 +1,74 @@
+h1{
+    color: #48e;
+    font-family: sans-serif;
+    margin: 30px;
+}
+/*CUANDO PASAMOS EL MOUSE POR ENCIMA*/
+h1:hover{
+    color:#000;
+}
+/*CUANDO HACEMOS CLIC CON EL MOUSE  ENCIMA DEL ELEMENTO*/
+h1:active{
+    background-color: #c93;
+}
+/*SELECCIONANDO EL PRIMER LI*/
+li:first-child{
+color:#03f;
+}
+/*SELECCIONANDO EL ÚLTIMO LI*/
+li:last-child{
+color: #6f6;
+}
+/*SELECCIONANDO EL ELEMENTO DE LA LISTA QUE QUERAMOS*/
+li:nth-child(4){    /*CON EL NTH-CHILD 4 MODIFICA EL ELEMENTO 4 DE LISTA*/
+    font-weight:bold;
+    color: #ffd54f;
+    }
+/*SELECCIONANDO UN ELEMENTO SI Y OTRO NO DE LA LISTA */
+li:nth-child(2n){
+background-color: #eceff1;    
+color:#f8b
+}
+/*SELECCIONANDO DEL LISTADO DE LI EL ELEMENTO CORRESPONDIENTE */
+li:nth-of-type(7){
+    background-color: #fa2;    
+    color:#fd3;
+    }
+    /*SI SE LE DA MAYOR ESPECIFICIDAD CON CLASS LISTA LA AFECTAN ESTAS CARACTERISTICAS SOBRE EL RESTO*/
+    .lista li{
+        color:#888;  
+    }
+/*SELECCIONANDO LOS LI DENTRO DE ".LISTA" QUE NO TENGAN LA CLASE EXCLUIR*/
+    .lista li:not(.excluir){
+        color:#f00;  
+    }
+    /*SELECIONANDO EL DIV EN CASO DE ESTA VACIO*/
+    div:empty{
+        background-color: #0f0;
+        padding: 30px;
+    }
+    /*MODIFICANDO CUANDO ESTA CHECKED*/
+        input[type="checkbox"]{
+        margin: 50px;
+    }
+    input[type="checkbox"]:checked{
+        margin: 0px;
+    }
+    /*SELECCIONANDO ENLACES NO VISITADOS*/
+    a:link{
+        color:#800;
+    }
+        /*SELECCIONANDO ENLACES VISITADOS*/
+    a:visited{
+        color:#080;
+    }
+    /*SELECCIONANDO INPUT VALIDO*/
+    input:valid{
+        color: #009;
+    }
+        /*SELECCIONANDO INPUT NO VALIDO*/
+    input:invalid{
+        color:#800;
+    }
+    
+

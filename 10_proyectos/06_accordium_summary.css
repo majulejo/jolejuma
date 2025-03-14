@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffb18c;
+    --text-color: #333;
+    --dark-color: rgb(255, 130, 77);
+    --faq-color: #fff;
+    font-family: Montserrat;
+}
+body, div, ul, li, a, h1, h2, h3, h4, p {
+margin: 0;
+padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    margin: 50px;
+    color: var(--text-color);
+}
+
+.faq {
+    margin: auto;
+}
+/*
+.faq details {
+    background-color: var(--faq-color); 
+    margin: 7px;
+    padding: 7px;
+}*/
+details {
+    background-color: var(--faq-color); 
+    margin: 7px;
+    padding: 7px;
+    max-height: 34px;
+    transition: max-height 2s;
+    overflow: hidden
+}
+details[open] {
+    max-height: 400px;
+}
+details[open] .content {
+    animation: aparecer 1s .6s both;
+
+}
+/* con details y details[ope] con las propiedades del max-height y del transition se abre algo más grande y lento  */
+
+
+summary {
+    user-select: none;
+    position: relative;
+}
+
+
+summary::marker {
+    content: '';
+}
+
+summary::before {
+    font-family: 'Material Symbols Outlined';
+    content: 'keyboard_double_arrow_down';
+    color: var(--bg-color);
+    position: absolute;
+    right: 0;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+details[open] summary::before {
+    font-family: 'Material Symbols Outlined';
+    content: 'keyboard_double_arrow_up';
+}
+
+.content {
+    padding: 5px 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    font-size: .8rem;
+    columns: var(--text-color);
+}
+
+details b {
+    background-color: var(--dark-color);
+    color: var(--faq-color);
+    padding: 2px 4px;
+    margin-right: 4px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        translate: 0 -20px;
+    }
+    50% {
+        border-top: 1px solid transparent;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+        border-top: 1px solid var(--bg-color);
+    }
+}
+@media  screen and (min-width: 600px) {
+    .faq {max-width: clamp(300px, 70%, 700px);    
+}
+}

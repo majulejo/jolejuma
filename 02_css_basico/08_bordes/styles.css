@@ -1,0 +1,12 @@
+div{
+background-color: rgb(41, 228, 228);
+width: 400px;
+margin: 40px auto;
+text-align: center;
+border-top: 4px solid rgb(171, 223, 180);
+border-bottom: 5px dashed rgb(215, 238, 13);
+border-right: 5px double blue;
+border-left: 4px dotted rgb(228, 174, 26);
+border-radius: 25px 35px 30% 30%;
+padding: 30px;
+}

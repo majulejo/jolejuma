@@ -1,0 +1,36 @@
+h3 { 
+    font-family: sans-serif;
+    color: #800;
+}
+div {
+    font-family: sans-serif;
+    width: 400px;
+    height: 400px;
+    background-color: #ccc;
+    white-space: pre-wrap;
+}
+pre,p {
+    font-family: sans-serif;
+    color: #000;
+    background-color: #ddd;
+    margin-left: 10px;
+    padding: 10px 10px;
+}
+/*en css esta es la estructura que se usa*/
+selector {
+    propiedad: valor;
+}
+header {
+    margin: ;    /*   m y tabulador*/
+    padding: ;   /*   p y tabulador*/
+    border: 1px solid #000;   /*   bd y tabulador*/
+    margin: 10px;    /*   m10 y tabulador*/          /*para el padding,width, height funciona igual*/
+    margin: 10%;    /*   m10p y tabulador*/          /*para el padding,width, height funciona igual*/
+    margin: 10em;    /*   m10e y tabulador*/         /*para el padding,width, height funciona igual*/
+    margin: 10px 10px;    /*   m10-10 y tabulador*/  /*para el padding,width, height funciona igual*/
+    margin: 10% 10px;    /*   m10p10 y tabulador*/   /*para el padding,width, height funciona igual*/
+    color: #000;      /*   c#   y tabulador*/
+    color: #000;      /*   c#0   y tabulador*/
+    color: #010101;   /*   c#01   y tabulador*/   
+
+}

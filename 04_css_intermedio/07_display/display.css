@@ -1,0 +1,42 @@
+body{
+    margin:0;
+    font-family: sans-serif;
+    text-align: center;
+}
+.nav{
+    background-color: #48e;
+    height: auto;    
+}
+.nav__list{
+    margin:0px;
+    text-align: center;
+}
+.nav__item{
+    display: inline-block;
+}
+/*MODIFICA LOS LINKS DEL 1 A 3 NAV__LINK*/  
+.nav__link{
+    color: #FFF;  
+    text-decoration:none;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+}
+/*CUANDO PASAS EL MOUSE POR ENCIMA MODIFICA LOS LINKS DEL 1 A 3 NAV__LINK*/  
+.nav__link:hover {
+    border-radius: 10px;
+    background-color: #59E;  
+}
+/*MODIFICA EL LINK 4 LINK--BUTTON*/  
+.link--button {
+    background-color: #fff;
+    padding: 4px 18px;
+    color: #48e;
+    border-radius: 3px;
+    margin-left: 50px; 
+}
+/*CUANDO PASAS EL MOUSE POR ENCIMA MODIFICA EL LINK 4 LINK--BUTTON*/  
+.link--button:hover {
+    background-color: transparent;
+    color:#fff;
+}

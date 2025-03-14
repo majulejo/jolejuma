@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh; /* Usamos dvh para establecer la altura completa */
+    background-color: #f0f0f0;
+}
+.box {
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #b6b3b3;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+/* Estilo para navegadores que admiten initial-letter */
+p::first-letter {
+    initial-letter: 3 3; /* Ocupa 3 líneas y está elevada 3 unidades */
+    color: #fd0101; /* Color inicial */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Hover común */
+p .initial-letter:hover,
+p:hover::first-letter {
+    color: #036df8; /* Cambia de color al hacer hover */
+    cursor: pointer; /* Cambia el cursor a "mano" */
+}
+
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}

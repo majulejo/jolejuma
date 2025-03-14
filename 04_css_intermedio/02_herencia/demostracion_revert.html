@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Revert</title>
+</head>
+<body> <!--BODY COLOR PURPLE -->
+    <style>
+    body {
+        color: purple;
+        margin: 30px 100px;
+    }
+    h1 {
+        color: blue;
+    }
+    h2 {
+        color: red;
+    }
+    div {
+        color: green;
+    }
+    p {
+        color: orange;
+    }
+    </style>
+    <h1 >H1 con color azul (inline style)</h1>
+    <h1 style="color: revert;">H1 con revert aplicado (debería volver al estilo predeterminado del navegador)</h1>
+    <h1 style="color: unset;">H1 con unset aplicado (debería volver al estilo predeterminado del navegador)</h1>
+    <h1 style="color: inherit;">H1 con inherit aplicado (debería volver al estilo predeterminado del navegador)</h1>
+    <h2 >H2 con color rojo (inline style)</h2>
+        <h2 style="color: revert;">H2 con revert aplicado fuera  de un div (debería volver al predeterminado del navegador)</h2>
+        <h2 style="color: unset;">H2 con unset aplicado fuera de un div </h2>
+        <h2 style="color: inherit;">H2 con inherit aplicado fuera de un div </h2>
+        <p >Párrafo con color naranja (inline style) fuera de un div</p>
+    <p style="color: revert;">Párrafo con revert aplicado fuera de un div(debería volver al predeterminado del navegador)</p>
+    <p style="color: unset;">H2 con unset aplicado fuera de un div </p>
+        <p style="color: inherit;">H2 con inherit fuera  de un div </p>
+
+    <div>
+        <h1 >H1 con color azul (inline style)</h1>
+    <h1 style="color: revert;">H1 con revert aplicado dentro de un div(debería volver al estilo predeterminado del navegador)</h1>
+    <h1 style="color: unset;">H1 con unset aplicado dentro de un div(debería volver al estilo predeterminado del navegador)</h1>
+    <h1 style="color: inherit;">H1 con inherit aplicado dentro de un div(debería volver al estilo predeterminado del navegador)</h1>
+        <h2 >H2 con color rojo (inline style)</h2>
+        <h2 style="color: revert;">H2 con revert aplicado dentro de un div (debería volver al predeterminado del navegador)</h2>
+        <h2 style="color: unset;">H2 con unset aplicado dentro de un div </h2>
+        <h2 style="color: inherit;">H2 con inherit aplicado dentro de un div </h2>
+        <p >Párrafo con color naranja (inline style) fuera de un div</p>
+    <p style="color: revert;">Párrafo con revert aplicado dentro de un div(debería volver al predeterminado del navegador)</p>
+    <p style="color: unset;">H2 con unset aplicado dentro de un div </p>
+        <p style="color: inherit;">H2 con inherit dentro  de un div </p>
+    </div>
+
+    
+</body>
+</html>

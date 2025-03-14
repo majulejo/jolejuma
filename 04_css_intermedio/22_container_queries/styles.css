@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+body, div, p {
+    box-sizing: border-box;
+}
+/* Configuración del contenedor main */
+.container-main p {
+    margin: 20px 20px ;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-size: 8px;
+    background-color: #acc;
+    color: #000;
+    border-radius: 15px;
+}
+.container-main {
+    container-type: inline-size;
+    container-name: main;
+}
+@container main (max-width: 500px) {
+    .container-main p {
+        font-size: 10px;
+        background-color: #fb8;
+        color: #fff;
+    }
+}
+/* Configuración del contenedor texto */
+.container-texto ul {
+    margin: 10px 20px;
+    background-color: #b9b;
+    color: #08e;
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+.container-texto {
+    container-type: inline-size;
+    container-name: texto;
+}
+@container texto (max-width: 500px) {
+    .container-texto ul {
+        background-color: #a98;
+        color: #fff;
+    }
+}
+/* Configuración del contenedor mar */
+.container-mar ul {
+    margin: 10px 20px;
+    background-color: #acc;
+    color: #08e;
+    border: 2px solid #000;border-radius: 15px;
+}
+.container-mar {
+    container-type: inline-size;
+    container-name: mar;
+}
+@container mar (max-width: 500px) {
+    .container-mar ul {
+        background-color: #498;
+        color: #fff;
+    }
+}
+/* Configuración del contenedor tierra */
+.container-tierra ul {
+    margin: 10px 20px;
+    background-color: #acc;
+    color: #08e;
+    border: 2px solid #000;
+    border-radius: 15px;
+}.container-tierra {
+    container-type: inline-size;
+    container-name: tierra;
+}
+@container tierra (max-width: 500px) {
+    .container-tierra ul {
+        background-color: #598;
+        color: #fff;
+    }
+}
+/* Configuración del contenedor fuego */
+.container-fuego ol {
+    margin: 10px 20px;
+    background-color: #acc;
+    color: #08e;
+    border: 2px solid #000;
+    border-radius: 15px;
+}.container-fuego {
+    container-type: inline-size;
+    container-name: fuego;
+}
+@container fuego (max-width: 500px) {
+    .container-fuego ol {
+        border: none;
+        background-color: #798;
+        color: #fff;
+        width: 200px;
+    }
+}

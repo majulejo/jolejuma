@@ -1,0 +1,42 @@
+/* SELECTOR POR ATRIBUTO */
+img[src="monos.jpg"] {
+    width: 10%;
+}
+img[src$=jpg] {
+    width: 10%;
+}
+img[src^=mon] {
+    width: 10%;
+}
+/* SELECTOR DESCENDIENTE */
+/* afecta a lo que esté dentro del primer atributo */
+ul li{
+    color:#2c7;
+    background-color: #adf;
+}
+/* SELECTOR POR HIJO DIRECTO */
+/* afecta a lo que está justo detras  y dentro del primer atributo */
+li>em {
+    color:#00f;
+    background-color: #f00;
+}
+/* SELECTOR HERMANO ADYACENTE */
+/* afecta a la primera <p> que está justo detras de un atributo <h1>  */
+h1+p{
+    color: #00f;
+    font-size: 19px;
+    background-color: #f91;
+}
+/* SELECTOR HERMANOS GENERALES */
+/* afecta a todas las <p> que están justo detras de un atributo <h2>  */
+h2~ p{
+    font-size: 19px;
+    background-color: #4cb;
+}
+/* SELECTOR DE VARIOS ELEMENTOS */
+
+h1,h2,p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fe5;
+}
+

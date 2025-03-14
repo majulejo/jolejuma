@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Features Queries</title>
+</head>
+<body>
+    <p> Si @supports, soportas el background-color  oklc......  lo vas a poner.</p>
+    <p>@supports (background-color: oklch(64.26% 0.1603 238.76)) {
+        body {
+            background-color: oklch(64.26% 0.1603 238.76)
+        } 
+    }</p>
+    <p>
+        @supports (display: grid) {
+            body {
+                display: grid;
+                grid-template-columns: .......;
+            }
+        }
+    </p>
+    <p>
+        @supports not (display: grid) {
+            body {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 0;
+            }
+        }
+    </p>
+</body>
+</html>

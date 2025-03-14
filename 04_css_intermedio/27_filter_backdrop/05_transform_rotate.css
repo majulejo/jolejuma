@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    background-color: #38f;
+}
+.box {
+    margin: auto;
+    padding: 20px 50px; 
+    border: 3px solid #ddd;
+
+}
+
+.box {
+    rotate: 360deg;
+    transition: rotate 3s;
+
+}
+.box:hover {
+    rotate: 0deg;
+
+
+}
+img {
+    rotate: 0deg;
+    transition: rotate 3s;
+
+}
+img:active {
+    rotate: 360deg;
+
+
+}
+tipos_de_filter {
+    filter: drop-shadow(0px 0px 15px #000);
+    filter: grayscale(.6) invert(1)  drop-shadow(0px 0px 45px #080) ;
+    filter: blur(10px);
+    filter: brightness(.5);
+    filter: contrast(.5);
+    filter: grayscale(.5);
+    filter: saturate(.1);
+    filter: hue-rotate(160deg);
+    filter: opacity(0.2);
+    filter: invert(1);
+    filter: sepia(1) blur(6px);
+    filter: sepia(1) blur(6px) contrast(2);
+    filter: grayscale(.5) drop-shadow(0px 0px 15px #000) invert(2);
+}
+transform {
+    scale: 2;
+    scale: 2 3;
+    transform: scale(1.62);
+    transform: scale(1,5);
+    transform: scaleY(1.62);
+    transform: scaleX(1.62);
+    transform: skew(30deg);    
+    transform: skewY(30deg);
+    transform: rotate(180deg);
+    transform: translate(180px);
+    transform: translateY(180px);
+    transform: translate(180px,-230px);
+    transform: translate(-180px,230px);
+    translate: 150px 60px;
+
+    .box {rotate: 0deg;transition: rotate 3s;}.box:hover {rotate: 360deg;}
+    .box {rotate: 0deg;transition: rotate 3s;}.box:active {rotate: 360deg;}
+    img {rotate: 0deg;transition: rotate 3s;}img:hover {rotate: 360deg;}
+    img {rotate: 0deg;transition: rotate 3s;}img:active {rotate: 360deg;}
+
+}

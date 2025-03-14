@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Revert, Initial, Inherit y Unset</title>
+</head>
+<body>
+    <style>
+        body{
+    coloR:BROWN;
+    padding: 20px 100px;
+}
+div{
+    color: green;
+} 
+h1{
+    color:blue;
+}
+H2{
+    color: red;
+}
+h3{
+    color: PURPLE;
+}
+H4{
+    color: orange;
+}
+p{
+    color:grey;
+    background-color: initial;
+}
+    </style>
+BODY COLOR BROWN
+<!-- h1 Sin contenedor -->
+    <h1>H1 AZUL EN CSS SIN CONTENEDOR</h1>
+    <h1 style="color: revert;">H1 AZUL con revert aplicado, toma el color del body, brown.</h1>
+    <h1 style="color: initial;">H1 con initial aplicado, toma el color del NAVEGADOR, BLACK.</h1>
+    <h1 style="color: inherit;">H1 con inherit aplicado, toma el color del BODY, BROWN.</h1>
+    <h1 style="color: unset;">H1 con unset aplicado , toma el color del BODY, BROWN.</h1>
+
+    <!-- h2 Sin contenedor -->
+    <h2>H2 RED EN CSS SIN CONTENEDOR</h2>
+    <h2 style="color: revert;">H2 red con revert aplicado, toma el color del BODY, BROWN.</h2>
+    <h2 style="color: initial;">H2 con initial aplicado</h2>
+    <h2 style="color: inherit;">H2 con inherit aplicado , toma el color del BODY, BROWN.</h2>
+    <h2 style="color: unset;">H2 con unset aplicado , toma el color del BODY, BROWN.</h3>
+    <!-- h3 Sin contenedor -->
+    <h3>H3 PURPLE EN CSS SIN CONTENEDOR</h3>
+    <h3 style="color: revert;">H3 purple con revert aplicado, toma el color del body, brown.</h3>
+    <h3 style="color: initial;">H3 con initial aplicado , toma el color del NAVEGADOR, BLACK.</h3>
+    <h3 style="color: inherit;">H3 con inherit aplicado , toma el color del BODY, BROWN.</h3>
+    <h3 style="color: unset;">H3 con unset aplicado , toma el color del BODY, BROWN.</h3>
+    <H4>H4 ORANGE EN CSS SIN CONTENEDOR</H4>
+
+    <!-- Dentro de un contenedor con estilo -->
+    <div style="color: green;">
+        <!-- h1 Dentro de un contenedor con estilo -->
+    <h1>H1 AZUL EN CSS CON  CONTENEDOR DENTRO DE DIV</h1>
+    <h1 style="color: revert;">H1 red con revert aplicado DENTRO DE DIV, toma el color del DIV, GREEN.</h1>
+    <h1 style="color: initial;">H1 con initial aplicado DENTRO DE DIV toma el color del NAVEGADOR, BLACK.</h1>
+    <h1 style="color: inherit;">H1 con inherit aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h1>
+    <h1 style="color: unset;">H1con unset aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h1>
+
+    <!-- h2 Dentro de un contenedor con estilor -->
+    <h2>H2 RED EN CSS CON  CONTENEDOR DENTRO DE DIV</h2>
+    <h2 style="color: revert;">H2 red con revert aplicado, toma el color del DIV, GREEN.</h2>
+    <h2 style="color: initial;">H2 con initial aplicado DENTRO DE DIV toma el color del NAVEGADOR, BLACK.</h2>
+    <h2 style="color: inherit;">H2 con inherit aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h2>
+    <h2 style="color: unset;">H2 con unset aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h3>
+    <!-- h3 Dentro de un contenedor con estilo -->
+    <h3>H3 PURPLE EN CSS CON  CONTENEDOR DENTRO DE DIV</h3>
+    <h3 style="color: revert;">H3 purple con revert aplicado, toma el color del body, brown. DENTRO DE DIV</h3>
+    <h3 style="color: initial;">H3 con initial aplicado DENTRO DE DIV toma el color del NAVEGADOR, BLACK.</h3>
+    <h3 style="color: inherit;">H3 con inherit aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h3>
+    <h3 style="color: unset;">H3 con unset aplicado DENTRO DE DIV toma el color del DIV, GREEN.</h3>
+    <H4>H4 ORANGE EN CSS  DENTRO DE DIV</H4>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+div, body {
+    box-sizing: border-box;
+}
+h3 {
+    font-family: sans-serif;color: #008;text-align: center;
+}
+/*ROW-WRAP*/
+.flexbox {
+    display: flex;  
+    flex-direction: row; /*dirección de los item*/
+    flex-wrap: wrap;/*nowrap se adapta el tamaño del item al de la caja*/
+    border: 2px solid #000;
+    margin: 20px;
+    height: 300px;
+}
+.flex-item {
+    width: 150px;
+    height: 50px;
+    background-color: #911;
+    margin: 10px;
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+}
+.flex-item:first-child {
+    background-color: #f77;
+}
+.flex-item:last-child {
+    background-color: #ff0;
+}
+/*ROW-REVERSE-WRAP*/
+.flexboxRR {
+    border: 2px solid #000;
+    display: flex;  
+    flex-direction: row-reverse;
+    flex-wrap: wrap;/*wrap no se adapta el tamaño del item al de la caja y se va hacia abajo*/
+    margin: 20px;
+}
+.flex-itemRR {
+    width: 250px;  
+    height: 100px;
+    background-color: #abcabc;
+    margin: 10px;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+.flex-itemRR:first-child {
+    background-color: #f8aaf8;
+}
+.flex-itemRR:last-child {
+    background-color: #086;
+}
+
+

@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ccc;
+    }
+h1 {text-align: center;
+        color: #800;
+    }
+    h2 {text-align: center;
+        color: #008;
+    }
+div, body {
+    box-sizing: border-box;
+}
+div {
+    background-color: #fff;
+}
+/*--Flexbox orden normal--*/
+.flexbox {
+    display: flex;  
+    flex-flow: row wrap; 
+    border: 2px solid #000;
+    margin: 20px;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-item {
+    width: 120px;
+    height: 60px;
+    background-color: #911;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+}
+.flex-item:first-child {
+    background-color: #ddd;
+    }
+.flex-item:last-child {
+    background-color: #ff0; 
+}
+/*--Flexbox2 orden 2--*/
+
+.flexbox2 {
+    display: flex;  
+    flex-flow: row wrap; 
+    border: 2px solid #000;
+    margin: 20px;
+    height: 150px;
+    justify-content: space-evenly;
+    align-items: end;
+}
+.flex-item2 {
+    width: 120px;
+    height: 60px;
+    padding: 15px;
+    background-color: #911;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    order: 3;
+}
+.flex-item2:first-child {
+    background-color: #ddd;
+    order: 2;
+    }
+.flex-item2:last-child {
+    background-color: #ff0; 
+    order: 1;      
+}
+/*--Flexbox3 orden 3--*/
+.flexbox3 {
+    display: flex;  
+    flex-flow: row wrap; 
+    border: 2px solid #000;
+    margin: 20px;
+    height: 150px;
+    justify-content: space-between;
+    align-items: start;
+}
+.flex-item3 {
+    width: 120px;
+    height: 60px;
+    padding: 15px;
+    background-color: #911;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    order: 1;
+}
+.flex-item3:first-child {
+    background-color: #ddd;
+    order: 3;
+    }
+.flex-item3:last-child {
+    background-color: #ff0; 
+    order: 2;      
+}
+/*--Flexbox4 orden 3 column--*/
+.flexbox4 {
+    display: flex;  
+    flex-flow: column wrap; 
+    border: 2px solid #000;
+    margin: 20px;
+    width: 500px;
+    height: 400px;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-item4 {
+    width: 120px;
+    height: 60px;
+    padding: 15px;
+    background-color: #911;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    order: 1;
+}
+.flex-item4:first-child {
+    background-color: #ddd;
+    order: 3;
+    }
+.flex-item4:last-child {
+    background-color: #ff0; 
+    order: 2;      
+}

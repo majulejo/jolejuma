@@ -1,0 +1,34 @@
+body{
+    margin: 0px;
+    background-color: #ededed;
+}
+.box {
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    position: relative;    
+}
+.box--blue {
+    background-color: blue;
+    top: 70px;
+    left: 20px;
+    z-index: 20;
+}
+.box--purple {
+    background-color: #a020f0;
+    top: 30px;
+    left: 30px;
+    z-index: 20;
+}
+.box--green{
+    background-color: #080;
+    top: 20px;
+    left: 40px;
+}
+.box:first-child {
+    background-color: #800;
+    left: 50px;
+    top: 20px;
+    z-index:40;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="8_flex-shrink.css">
+    <title>Flex-Shrink-Row-Wrap</title>
+</head>
+<body>
+    <h2>Con flex-shrink:0 definimos el espacio que se encogen los elementos</h2>
+
+    <!--Flex-Shrink-Row-Wrap-->
+    <h4>Flex-Shrink-Row-Wrap</h4>
+    <h4>Con row wrap no se encogen los item y se van directamente abajo aunque tenga flex-shrink</h4>
+
+    <div class="flexboxrowwrap">
+        <div class="flex-itemrowwrap">F-Sh-R-W </div>
+        <div class="flex-itemrowwrap">2</div>
+        <div class="flex-itemrowwrap">3</div>
+    </div>
+
+    <!--Flex-Shrink-Row-NoWrap-Uno -->
+    <h4>Con row nowrap  se encogen los elementos y no se van directamente abajo.Con el flex-shrink definimos lo que se encoge el item</h4>
+    <h4>Flex-Shrink-Row-NoWrap</h4>
+    <div class="flexbox-row-no-wrap-uno"><div class="flex-item-row-no-wrap-uno">F-Sh-R-N-W </div>
+        <div class="flex-item-row-no-wrap-uno">2</div>
+        <div class="flex-item-row-no-wrap-uno">3</div>
+    </div>
+    <!--Flex-Shrink-COLUMN-wrap-->
+    <h4>Flex-Shrink-COLUMN-wrap</h4>
+    <div class="flexboxCOLUMNWRAP">
+        <div class="flex-itemCOLUMNWRAP">F-Sh-R-Wr </div>
+        <div class="flex-itemCOLUMNWRAP">2</div>
+        <div class="flex-itemCOLUMNWRAP">3</div>
+    </div>
+        <!--Flex-Shrink-COLUMN-nowrap-->
+
+    <h4>Flex-Shrink-COLUMN-Row-Nowrap</h4>
+    <div class="flexboxCOLUMNNOWRAP">
+        <div class="flex-itemCOLUMNNOWRAP">F-Sh-R-N </div>
+        <div class="flex-itemCOLUMNNOWRAP">2</div>
+        <div class="flex-itemCOLUMNNOWRAP">3</div>
+    </div>        
+    </body>
+</html>

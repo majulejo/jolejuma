@@ -1,0 +1,25 @@
+/* GRADIENTES_COPY2 */
+BODY{
+#f00;
+margin: 0;
+}
+.box{
+width: 300px;
+height: 400px;
+background:linear-gradient(to top, transparent,#000, #777, #17cc35, #ccc);
+margin: 0;
+border-radius: 7PX;
+margin: auto;
+margin-top: 20PX;
+border-top: 6PX solid #900;
+}
+h1{
+margin: 0;
+color: #fff;
+text-align: center;
+padding: 20px;
+font-family: sans-serif;
+}
+img{
+width: 300px;
+}

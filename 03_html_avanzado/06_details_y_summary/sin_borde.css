@@ -1,0 +1,28 @@
+/*SIN BORDE INFERIOR*/
+body{
+    background:#444;
+    color:#ddd;
+    margin:60px;    
+}
+details{
+    background: transparent;
+    padding: 10px;
+    margin:6px;
+    font-size: 1em;
+    color: #eff;
+
+}
+details[open]{
+    background-color:#555; 
+    font-weight: bold;
+    border-radius: 8px;
+}
+summary{
+    background-color: transparent;
+    border-bottom:1px solid #fff ;
+    padding: 9x;
+    color: #fff7;
+}
+ul{
+    font-weight: 100px;
+}

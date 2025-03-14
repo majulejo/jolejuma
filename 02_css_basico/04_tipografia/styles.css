@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(236, 207, 182);
+}
+p{
+    color: blue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-style:normal;
+    text-align: justify;
+    text-decoration: underline  ;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    text-transform: none;
+    margin: 10px;
+}
+h1{
+    color: burlywood;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large; 
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    text-decoration:underline-through;
+}

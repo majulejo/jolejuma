@@ -1,0 +1,17 @@
+body{
+color: rgb(43, 44, 44);
+background-color: bisque;
+}
+h1{color: coral;
+}
+li{
+color: black;   
+}
+.inicial{color: rgba(240, 9, 59, 0.514);
+}
+.error{color: green
+}
+#ingrediente-secreto{
+color: orangered;
+background-color: azure;
+}

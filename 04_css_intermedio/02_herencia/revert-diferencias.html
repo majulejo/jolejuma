@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revert-diferencias</title>
+    <style>
+        /* Estilo general */
+        body {
+            color: brown; /* Color base */
+        }
+
+        div {
+            color: green; /* Color específico para div */
+        }
+
+        /* Estilos predeterminados forzados */
+        h2, h3, h4, p {
+            font-weight: normal; /* Aseguramos consistencia de peso */
+        }
+
+        /* Ayuda a ver diferencias claras */
+        h2 {
+            color: blue; /* Si revert se aplica, se verá diferente */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ejemplo con propiedades CSS</h1>
+        <h2 style="color: unset;">H2 CON `UNSET` DENTRO DE DIV</h2>
+        <h3 style="color: revert;">H3 CON `REVERT` DENTRO DE DIV</h3>
+        <h4 style="color: inherit;">H4 CON `INHERIT` DENTRO DE DIV</h4>
+        <p style="color: initial;">P CON `INITIAL` DENTRO DE DIV</p>
+    <h3>revert de cualquier manera dentro de div</h3>
+    </div>
+
+    <h2 style="color: unset;">H2 CON `UNSET` FUERA DE DIV</h2>
+    <h3 style="color: revert;">H3 CON `REVERT` FUERA DE DIV</h3>
+    <h4 style="color: inherit;">H4 CON `INHERIT` FUERA DE DIV</h4>
+    <p style="color: initial;">P CON `INITIAL` FUERA DE DIV</p>
+    <h3>revert de cualquier manera fuera de div</h3>
+</body>
+</html>

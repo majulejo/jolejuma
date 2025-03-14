@@ -1,0 +1,92 @@
+body {    
+    margin: 0;    
+    font-family: sans-serif;
+    background-color: #ddd;
+}
+body, div {    
+    box-sizing: border-box;    
+}
+h5,h4 {
+    color: #009;
+    text-align: center;
+}
+/* Clase base para todas las cuadrículas */
+.grid {  
+    display: grid;
+    grid-template-columns: repeat(3, 250px); 
+    grid-template-rows: repeat(1, 150px);   
+    gap: 10px;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid #000;
+    justify-items: stretch;
+    justify-content: space-evenly;
+    height: 150px;
+}
+
+/* Variantes de alineación */
+.grid-start {
+    align-items: start; /* Alineación al inicio */
+}
+
+.grid-center {
+    align-items: center; /* Alineación centrada */
+}
+
+.grid-end {
+    align-items: end; /* Alineación al final */
+}
+
+/* Estilo de los elementos de la cuadrícula */
+.grid-item {
+    background-color: #75f;
+    border-radius: 16px;
+    font-size: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 10px;
+}
+
+.grid-item:first-child {
+    background-color: #cb7;
+}
+
+.grid-item:last-child {
+    background-color: #800e;
+}
+/* Modificaciones para el primer y último elemento dentro de .grid-start */
+.grid-start .grid-item:first-child {
+    background-color: #f00; /* Cambia el color de fondo */
+    font-weight: bold; /* Cambia el peso de la fuente */
+    align-self: center;
+}
+
+.grid-start .grid-item:last-child {
+    background-color: #0f0; /* Cambia el color de fondo */
+    border: 3px solid #000; /* Cambia el borde */
+    align-self: end;
+}
+
+/* Modificaciones para el primer y último elemento dentro de .grid-center */
+.grid-center .grid-item:first-child {
+    background-color: #00f;
+    border-radius: 50%; /* Redondea los bordes */
+}
+
+.grid-center .grid-item:last-child {
+    background-color: #ff0;
+    transform: scale(1.1); /* Cambia el tamaño */
+}
+
+/* Modificaciones para el primer y último elemento dentro de .grid-end */
+.grid-end .grid-item:first-child {
+    background-color: #800e;
+    padding: 20px; /* Cambia el padding */
+}
+
+.grid-end .grid-item:last-child {
+    background-color: #cb7;
+    font-size: 40px; /* Cambia el tamaño del texto */
+}
