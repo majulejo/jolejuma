@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones CSS Mejoradas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .description {
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        
+        .demo-container {
+            margin-bottom: 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #4fc3f7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            font-size: 1.8rem;
+        }
+        
+        .instruction {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Estilos para la barra con steps */
+        .box {
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 4px solid #48e;
+            padding: 6px;
+            border-radius: 39px;
+            transition: border 0.6s steps(6);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .barra {
+            padding: 20px;
+            background-color: #48e;
+            border-radius: 30px;
+            width: 10%;
+            transition: width 0.6s steps(6), background-color 0.6s steps(6);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .barra:active {
+            width: 100%;
+            transition-duration: 3s;
+            background-color: #f33;
+        }
+        
+        .box:has(.barra:active) {
+            border: 4px solid #f33;
+            transition-duration: 3s;
+        }
+        
+        /* Estilos para la barra continua */
+        .box-continua {
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 6px;
+            border: 4px solid #48e;
+            border-radius: 39px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .barra-continua {
+            padding: 20px;
+            background: linear-gradient(90deg, #48e, #4fc3f7);
+            border-radius: 30px;
+            width: 10%;
+            transition: width 1s linear;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .barra-continua:active {
+            width: 100%;
+            transition-duration: 4s;
+        }
+        
+        /* Indicador de porcentaje */
+        .percentage {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+        
+        /* Mejora para prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .barra, .box, .barra-continua {
+                transition: none;
+            }
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+        
+        .info-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .try-me {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #4fc3f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Transiciones CSS</h1>
+        
+        <p class="description">Explora los diferentes tipos de transiciones CSS con estas barras interactivas. Haz clic y mantén presionado en cada barra para ver la animación.</p>
+        
+        <div class="demo-container">
+            <h2>🔄 Transición por Pasos (steps)</h2>
+            
+            <div class="instruction">
+                <p>Esta barra utiliza la función <code>steps(6)</code> que divide la animación en 6 pasos discretos. Haz clic y mantén presionado para ver el efecto.</p>
+            </div>
+            
+            <div class="box">
+                <div class="barra">
+                    STEP 1
+                    <span class="percentage">10%</span>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <p><strong>Función steps():</strong> Divide la transición en intervalos equidistantes. En este caso, la animación avanza en 6 pasos en lugar de hacerlo de forma continua.</p>
+                <span class="try-me">¡Pruébalo! Haz clic y mantén presionado sobre la barra azul</span>
+            </div>
+        </div>
+        
+        <div class="demo-container">
+            <h2>⏩ Transición Continua (linear)</h2>
+            
+            <div class="instruction">
+                <p>Esta barra utiliza la función <code>linear</code> que realiza una transición suave y constante de principio a fin.</p>
+            </div>
+            
+            <div class="box-continua">
+                <div class="barra-continua">
+                    CONTINUA
+                    <span class="percentage">10%</span>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <p><strong>Función linear:</strong> La animación avanza de manera constante desde el inicio hasta el final, sin variaciones en la velocidad.</p>
+                <span class="try-me">¡Pruébalo! Haz clic y mantén presionado sobre la barra azul</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Diseñado para demostrar las transiciones CSS - steps() vs linear</p>
+        </div>
+    </div>
+
+    <script>
+        // Añadir funcionalidad para mostrar el porcentaje
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.barra, .barra-continua');
+            
+            bars.forEach(bar => {
+                // Inicializar el porcentaje
+                const percentage = bar.querySelector('.percentage');
+                
+                // Actualizar durante la transición
+                bar.addEventListener('transitionstart', function() {
+                    if (percentage) {
+                        let width = 10;
+                        const interval = setInterval(() => {
+                            if (width < 100) {
+                                width += 2;
+                                percentage.textContent = `${width}%`;
+                            }
+                        }, 80);
+                        
+                        // Limpiar intervalo cuando termine la transición
+                        bar.addEventListener('transitionend', function() {
+                            clearInterval(interval);
+                            percentage.textContent = '100%';
+                        }, {once: true});
+                    }
+                });
+                
+                // Restablecer cuando se suelte el clic
+                bar.addEventListener('transitionend', function() {
+                    // Pequeño retraso antes de resetear
+                    setTimeout(() => {
+                        if (percentage) {
+                            percentage.textContent = '10%';
+                        }
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
