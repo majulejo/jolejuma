@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elementos y Pseudo-clases CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #f7f7f7, #e2e2e2);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        h1::first-letter {
+            color: #800;
+            font-size: 1.5em;
+            letter-spacing: 8px;
+        }
+        
+        .description {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .examples-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .example {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .example:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-title {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+        
+        .example-content {
+            padding: 20px;
+        }
+        
+        .example-explanation {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 5px solid #2c3e50;
+            margin-top: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .demo-div {
+            padding: 5px;
+            margin: 15px 0;
+            border: 1px dashed #aaa;
+            min-height: 80px;
+        }
+        
+        .demo-div::first-line {
+            color: #080;
+            font-weight: bold;
+        }
+        
+        .demo-div::selection {
+            background-color: #cbd113;
+            color: #65d113;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        input::placeholder {
+            color: #008;
+            background-color: #bfe0a6;
+            padding: 5px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 10px;
+        }
+        
+        li {
+            padding: 8px 5px;
+            margin: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        li::marker {
+            color: #f79cd1;
+        }
+        
+        li::before {
+            content: "Antes: ";
+            color: #2507eb;
+            padding-right: 60px;
+            font-weight: bold;
+        }
+        
+        li::after {
+            content: "Después";
+            color: #33b57d;
+            margin-left: 45px;
+            background-color: #cbd113;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .try-yourself {
+            background: #e8f4fc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .try-yourself h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .examples-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pseudo-elementos CSS</h1>
+            <p class="description">Explora los diferentes pseudo-elementos CSS y cómo pueden mejorar el diseño de tu sitio web.</p>
+        </header>
+        
+        <div class="examples-container">
+            <div class="example">
+                <div class="example-title">::first-letter</div>
+                <div class="example-content">
+                    <h2>Título de ejemplo</h2>
+                    <div class="code-block">
+                        h1::first-letter {<br>
+                        &nbsp;&nbsp;color: #800;<br>
+                        &nbsp;&nbsp;font-size: 3em;<br>
+                        &nbsp;&nbsp;letter-spacing: 8px;<br>
+                        }
+                    </div>
+                </div>
+                <div class="example-explanation">
+                    <p><strong>::first-letter</strong> aplica estilos a la primera letra de un elemento de bloque. En este ejemplo, la primera letra del título es más grande, de color granate y con mayor espaciado.</p>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">::first-line</div>
+                <div class="example-content">
+                    <div class="demo-div">
+                        Este es un ejemplo de texto donde la primera línea tiene un estilo especial. Si la ventana es lo suficientemente ancha, solo la primera línea será verde y en negrita. Si ajustas el tamaño de la ventana, verás cómo cambia la primera línea.
+                    </div>
+                    <div class="code-block">
+                        div::first-line {<br>
+                        &nbsp;&nbsp;color: #080;<br>
+                        &nbsp;&nbsp;font-weight: bold;<br>
+                        }
+                    </div>
+                </div>
+                <div class="example-explanation">
+                    <p><strong>::first-line</strong> aplica estilos a la primera línea de un elemento de bloque. Los estilos se ajustan automáticamente cuando cambia el tamaño de la ventana.</p>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">::selection</div>
+                <div class="example-content">
+                    <div class="demo-div">
+                        Selecciona este texto para ver el efecto. El fondo de la selección será amarillo verdoso y el texto se volverá verde claro.
+                    </div>
+                    <div class="code-block">
+                        div::selection {<br>
+                        &nbsp;&nbsp;background-color: #cbd113;<br>
+                        &nbsp;&nbsp;color: #65d113;<br>
+                        }
+                    </div>
+                </div>
+                <div class="example-explanation">
+                    <p><strong>::selection</strong> aplica estilos a la porción de un documento que ha sido resaltado por el usuario (por ejemplo, al seleccionar texto con el mouse).</p>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">::placeholder</div>
+                <div class="example-content">
+                    <input type="text" placeholder="Escribe algo aquí...">
+                    <div class="code-block">
+                        input::placeholder {<br>
+                        &nbsp;&nbsp;color: #008;<br>
+                        &nbsp;&nbsp;background-color: #bfe0a6;<br>
+                        }
+                    </div>
+                </div>
+                <div class="example-explanation">
+                    <p><strong>::placeholder</strong> aplica estilos al texto de marcador de posición en elementos de entrada. En este ejemplo, el texto del placeholder es azul con fondo verde claro.</p>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">::marker, ::before y ::after</div>
+                <div class="example-content">
+                    <ul>
+                        <li>Elemento de lista 1</li>
+                        <li>Elemento de lista 2</li>
+                        <li>Elemento de lista 3</li>
+                    </ul>
+                    <div class="code-block">
+                        li::marker {<br>
+                        &nbsp;&nbsp;color: #f79cd1;<br>
+                        }<br><br>
+                        li::before {<br>
+                        &nbsp;&nbsp;content: "Antes: ";<br>
+                        &nbsp;&nbsp;color: #2507eb;<br>
+                        &nbsp;&nbsp;padding-right: 60px;<br>
+                        }<br><br>
+                        li::after {<br>
+                        &nbsp;&nbsp;content: "Después ";<br>
+                        &nbsp;&nbsp;color: #33b57d;<br>
+                        &nbsp;&nbsp;margin-left: 45px;<br>
+                        &nbsp;&nbsp;background-color: #cbd113;<br>
+                        }
+                    </div>
+                </div>
+                <div class="example-explanation">
+                    <p><strong>::marker</strong> aplica estilos al marcador de elementos de lista. <strong>::before</strong> inserta contenido antes del elemento, y <strong>::after</strong> inserta contenido después del elemento.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="try-yourself">
+            <h2>¡Practica tú mismo!</h2>
+            <p>Intenta modificar el tamaño de la ventana para ver cómo los pseudo-elementos se adaptan al contenido. Selecciona texto, observa los marcadores de posición y explora cómo los pseudo-elementos pueden mejorar tu diseño.</p>
+        </div>
+        
+        <footer>
+            <p>Creado para demostrar el uso de pseudo-elementos CSS - 2023</p>
+        </footer>
+    </div>
+</body>
+</html>

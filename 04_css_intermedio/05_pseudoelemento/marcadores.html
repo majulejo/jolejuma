@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelementos CSS - Explicación y Demostración</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #f7f7f7, #e2e2e2);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        h1::first-letter {
+            color: #800;
+            font-size: 1.5em;
+            letter-spacing: 8px;
+        }
+        
+        .description {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-title {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+        
+        .example-content {
+            padding: 20px;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        /* Estilos para los pseudoelementos */
+        .lista {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        li::marker {
+            color: #f79cd1;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        li::before {
+            content: "Antes: ";
+            color: #2507eb;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+        
+        li::after {
+            content: "Después";
+            color: #33b57d;
+            margin-left: 10px;
+            background-color: #cbd113;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        div {
+            padding: 5px;
+            margin: 15px 0;
+        }
+        
+        div::first-line {
+            color: #080;
+            font-weight: bold;
+        }
+        
+        div::selection {
+            background-color: #cbd113;
+            color: #65d113;
+        }
+        
+        input::placeholder {
+            color: #008;
+            background-color: #bfe0a6;
+            padding: 5px;
+        }
+        
+        a {
+            color: #2575fc;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .explanation {
+            background: #e8f4fc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .explanation h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .explanation p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pseudoelementos CSS</h1>
+            <p class="description">Explicación y demostración de pseudoelementos como ::marker, ::before, ::after y más.</p>
+        </header>
+        
+        <div class="content">
+            <div class="example-box">
+                <div class="example-title">Código Original</div>
+                <div class="example-content">
+                    <pre class="code-block">
+div{
+    padding: 5px;
+}
+h1::first-letter {
+    color:#800;
+    font-size: 3em;
+    letter-spacing: 8px;
+}
+div::first-line {
+    color:#080;
+    font-weight: bold;
+}
+div::selection{
+    background-color: #cbd113;
+    color: #65d113 ;
+}
+input::placeholder{
+    color:#008;
+    background-color:#bfe0a6 ;
+}
+li::marker{
+    color:#f79cd1;
+}
+li::before{
+    content: "Antes: ";
+    color:#2507eb;
+    padding-right: 60px;
+}
+li::after{
+    content: "Después ";
+    color:#33b57d;
+    margin-left: 45px;
+    background-color: #cbd113;
+}</pre>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Resultado Visual</div>
+                <div class="example-content">
+                    <h1>IDIOMAS</h1>
+                    <ul class="lista">
+                        <li class="elemento1">1--Li-1 Español</li>
+                        <li>2--Li-2 Frances</li>
+                        <span class="elemento2">3--Matemáticas</span>
+                        <li>4--Li-3 Alemán</li>
+                        <li>5--Li-4 Portugués</li>
+                    </ul>
+                    <ol>
+                        <li>listado enumerado 1</li>
+                        <li>listado enumerado 2</li>
+                        <li>listado enumerado 3</li>
+                    </ol>
+                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum eos natus dolore tenetur quaerat incidunt reiciendis consequuntur magnam nesciunt! Sit officiis impedit eos maxime suscipit earum itaque unde deserunt saepe?Probando un div que le sigue a un "UL"</div>
+                    
+                    <a href="http://simyo.es/#" target="_blank">simyo</a>
+                    <a href="http://simyo.es" target="_blank">Enlaces en otra pestaña</a>
+                    
+                    <div>
+                        <label>Email: <input type="email" placeholder="placeholder@ejemplo.es"></label><br>
+                        <label>Acepto los términos y condiciones<br>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                    
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quod impedit illum dolore excepturi, quidem natus minima, repellendus numquam quasi inventore debitis. Labore nemo, iste magnam at omnis dicta culpa.</div>
+                    
+                    <label>Correo electrónico: <input type="email" placeholder="placeholder@ejemplo.es"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="explanation">
+            <h2>¿Qué hace li::marker?</h2>
+            <p>El pseudoelemento <code>::marker</code> aplica estilos al marcador de los elementos de lista (las viñetas en listas no ordenadas y los números en listas ordenadas).</p>
+            
+            <p>En este caso, <code>li::marker { color: #f79cd1; }</code> cambia el color de todos los marcadores de elementos de lista a un tono rosa claro.</p>
+            
+            <p>Los pseudoelementos permiten aplicar estilos a partes específicas de un elemento sin necesidad de agregar HTML adicional. En este ejemplo, también se utilizan:</p>
+            
+            <ul>
+                <li><code>::first-letter</code> - para la primera letra del título</li>
+                <li><code>::first-line</code> - para la primera línea de los párrafos</li>
+                <li><code>::selection</code> - para el texto seleccionado</li>
+                <li><code>::placeholder</code> - para el texto de marcador de posición en inputs</li>
+                <li><code>::before</code> - para insertar contenido antes de los elementos de lista</li>
+                <li><code>::after</code> - para insertar contenido después de los elementos de lista</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Demostración de pseudoelementos CSS - 2023</p>
+        </footer>
+    </div>
+</body>
+</html>

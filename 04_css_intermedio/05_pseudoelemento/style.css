@@ -19,15 +19,16 @@ input::placeholder{
     background-color:#bfe0a6 ;
 }
 li::marker{
-    color:#f7a89c;
+    color:#f79cd1;
 }
 li::before{
     content: "Antes: ";
     color:#2507eb;
-    padding-right: 20px;
+    padding-right: 60px;
 }
 li::after{
     content: "Después ";
     color:#33b57d;
-    margin-left: 20px;
+    margin-left: 45px;
+    background-color: #cbd113;
 }
