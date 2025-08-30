@@ -5,14 +5,14 @@
 }
 .formulario_input{
     background-color: rgb(204, 224, 238);
-    width: 90%;
-    padding: 20px;
+    width: 60%;
+    padding: 30px 20px;
     margin: 2px;
 }
 .pimiento_input{
     background-color: rgb(156, 196, 223);
-    width: 80%;
-    padding: 20px;
+    width: 60%;
+    padding: 40px 90px;
     color: black;
     background-color: rgb(94, 38, 150);
     text-align: center;
