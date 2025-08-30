@@ -1,19 +1,30 @@
 .formulario{
-    background-color: rgb(152, 197, 214);
+    background-color: rgb(233, 243, 247);
     padding: 5px 10px ;
     
 }
 .formulario_input{
     background-color: rgb(204, 224, 238);
     width: 60%;
-    padding: 30px 20px;
+    padding: 40px 20px;
     margin: 2px;
+    text-align: right;
+
 }
 .form2_input{
-    width: 60%;
+    width: 50%;
     padding: 40px 90px;
     color: black;
-    background-color: rgb(94, 38, 150);
+    background-color: rgb(74, 211, 131);
+    text-align: center;
+    margin: 12px;
+}
+
+.form2_submit {
+    width: 10%;
+    padding: 4px 9px;
+    color: black;
+    background-color: #ccc;
     text-align: center;
     margin: 12px;
 }
