@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con Etiquetas en Diferentes Posiciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .example {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .example:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-title {
+            font-size: 1.4rem;
+            color: #2575fc;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+        
+        .btn {
+            position: relative;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        /* Ejemplo 1: Etiqueta en esquina superior derecha */
+        .top-right::after {
+            content: "Nuevo";
+            position: absolute;
+            top: -12px;
+            right: -15px;
+            background-color: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Ejemplo 2: Etiqueta en esquina superior izquierda */
+        .top-left::before {
+            content: "Oferta";
+            position: absolute;
+            top: -12px;
+            left: -15px;
+            background-color: #2ed573;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        /* Ejemplo 3: Etiqueta en esquina inferior derecha */
+        .bottom-right::after {
+            content: "Popular";
+            position: absolute;
+            bottom: -12px;
+            right: -15px;
+            background-color: #ffa502;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        /* Ejemplo 4: Etiqueta en esquina inferior izquierda */
+        .bottom-left::before {
+            content: "Limited";
+            position: absolute;
+            bottom: -12px;
+            left: -15px;
+            background-color: #3742fa;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        /* Ejemplo 5: Etiqueta arriba centrada */
+        .top-center::before {
+            content: "Premium";
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff6b81;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        
+        /* Ejemplo 6: Etiqueta abajo centrada */
+        .bottom-center::after {
+            content: "Gratis";
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1e90ff;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        
+        /* Ejemplo 7: Etiqueta dentro del botón a la derecha */
+        .inside-right::after {
+            content: "→";
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        /* Ejemplo 8: Etiqueta dentro del botón a la izquierda */
+        .inside-left::before {
+            content: "←";
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* Ejemplo 9: Múltiples etiquetas */
+        .multiple::before {
+            content: "Hot";
+            position: absolute;
+            top: -12px;
+            left: -15px;
+            background-color: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        .multiple::after {
+            content: "Sale";
+            position: absolute;
+            bottom: -12px;
+            right: -15px;
+            background-color: #2ed573;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        /* Animación de pulso */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .code {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border-left: 4px solid #007BFF;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Botones con Etiquetas en Diferentes Posiciones</h1>
+            <p class="description">
+                Ejemplos de cómo utilizar la propiedad CSS <code>content</code> con pseudo-elementos 
+                para agregar etiquetas a botones en diversas posiciones.
+            </p>
+        </header>
+        
+        <div class="examples-grid">
+            <!-- Ejemplo 1 -->
+            <div class="example">
+                <h2 class="example-title">Esquina Superior Derecha</h2>
+                <div class="button-container">
+                    <button class="btn top-right">Ver más</button>
+                </div>
+                <div class="code">
+                    .btn.top-right::after {<br>
+                    &nbsp;&nbsp;content: "Nuevo";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;top: -12px;<br>
+                    &nbsp;&nbsp;right: -15px;<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 2 -->
+            <div class="example">
+                <h2 class="example-title">Esquina Superior Izquierda</h2>
+                <div class="button-container">
+                    <button class="btn top-left">Comprar</button>
+                </div>
+                <div class="code">
+                    .btn.top-left::before {<br>
+                    &nbsp;&nbsp;content: "Oferta";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;top: -12px;<br>
+                    &nbsp;&nbsp;left: -15px;<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 3 -->
+            <div class="example">
+                <h2 class="example-title">Esquina Inferior Derecha</h2>
+                <div class="button-container">
+                    <button class="btn bottom-right">Suscribirse</button>
+                </div>
+                <div class="code">
+                    .btn.bottom-right::after {<br>
+                    &nbsp;&nbsp;content: "Popular";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;bottom: -12px;<br>
+                    &nbsp;&nbsp;right: -15px;<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 4 -->
+            <div class="example">
+                <h2 class="example-title">Esquina Inferior Izquierda</h2>
+                <div class="button-container">
+                    <button class="btn bottom-left">Reservar</button>
+                </div>
+                <div class="code">
+                    .btn.bottom-left::before {<br>
+                    &nbsp;&nbsp;content: "Limited";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;bottom: -12px;<br>
+                    &nbsp;&nbsp;left: -15px;<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 5 -->
+            <div class="example">
+                <h2 class="example-title">Arriba Centrada</h2>
+                <div class="button-container">
+                    <button class="btn top-center">Premium</button>
+                </div>
+                <div class="code">
+                    .btn.top-center::before {<br>
+                    &nbsp;&nbsp;content: "Premium";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;top: -35px;<br>
+                    &nbsp;&nbsp;left: 50%;<br>
+                    &nbsp;&nbsp;transform: translateX(-50%);<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 6 -->
+            <div class="example">
+                <h2 class="example-title">Abajo Centrada</h2>
+                <div class="button-container">
+                    <button class="btn bottom-center">Descargar</button>
+                </div>
+                <div class="code">
+                    .btn.bottom-center::after {<br>
+                    &nbsp;&nbsp;content: "Gratis";<br>
+                    &nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;bottom: -35px;<br>
+                    &nbsp;&nbsp;left: 50%;<br>
+                    &nbsp;&nbsp;transform: translateX(-50%);<br>
+                    &nbsp;&nbsp;/* Estilos adicionales */<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 7 -->
+            <div class="example">
+                <h2 class="example-title">Dentro del Botón (Derecha)</h2>
+                <div class="button-container">
+                    <button class="btn inside-right">Continuar</button>
+                </div>
+                <div class="code">
+                    .btn.inside-right::after {<br>
+                    &nbsp;&nbsp;content: "→";<br>
+                    &nbsp;&nbsp;margin-left: 10px;<br>
+                    &nbsp;&nbsp;font-weight: bold;<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 8 -->
+            <div class="example">
+                <h2 class="example-title">Dentro del Botón (Izquierda)</h2>
+                <div class="button-container">
+                    <button class="btn inside-left">Regresar</button>
+                </div>
+                <div class="code">
+                    .btn.inside-left::before {<br>
+                    &nbsp;&nbsp;content: "←";<br>
+                    &nbsp;&nbsp;margin-right: 10px;<br>
+                    &nbsp;&nbsp;font-weight: bold;<br>
+                    }
+                </div>
+            </div>
+            
+            <!-- Ejemplo 9 -->
+            <div class="example">
+                <h2 class="example-title">Múltiples Etiquetas</h2>
+                <div class="button-container">
+                    <button class="btn multiple">Producto</button>
+                </div>
+                <div class="code">
+                    .btn.multiple::before {<br>
+                    &nbsp;&nbsp;content: "Hot";<br>
+                    &nbsp;&nbsp;/* Posición superior izquierda */<br>
+                    }<br><br>
+                    .btn.multiple::after {<br>
+                    &nbsp;&nbsp;content: "Sale";<br>
+                    &nbsp;&nbsp;/* Posición inferior derecha */<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Ejemplos de uso de la propiedad CSS <code>content</code> con pseudo-elementos ::before y ::after</p>
+    </footer>
+</body>
+</html>
