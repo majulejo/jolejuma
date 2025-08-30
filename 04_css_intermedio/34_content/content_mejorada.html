@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón con Etiqueta "¡Nuevo!"</title>
+    <style>
+        /* Estilo base del botón */
+        .btn {
+            position: relative;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Efecto al pasar el mouse */
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Efecto al hacer clic */
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Agregar un pseudo-elemento ::after para mostrar "¡Nuevo!" */
+        .btn::after {
+            content: "¡Nuevo!"; /* Contenido generado */
+            position: absolute;
+            top: -10px; /* Posicionamiento arriba del botón */
+            right: -35px; /* Alineación hacia la derecha */
+            background-color: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 3px;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Animación de latido para la etiqueta */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Contenedor para centrar el botón */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Explicación del código */
+        .explicacion {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn">Haz clic aquí</button>
+        
+        <div class="explicacion">
+            <h2>¿Cómo funciona este código?</h2>
+            <p>Este ejemplo muestra un botón con una etiqueta "¡Nuevo!" creada con CSS:</p>
+            <ul>
+                <li><strong>HTML:</strong> Creamos un botón básico con la clase <code>btn</code>.</li>
+                <li><strong>CSS:</strong> 
+                    <ul>
+                        <li>Estilizamos el botón con colores y dimensiones atractivas.</li>
+                        <li>Usamos el pseudo-elemento <code>::after</code> para agregar el texto "¡Nuevo!" como un elemento adicional.</li>
+                        <li>La propiedad <code>content</code> define el texto que aparece en el pseudo-elemento.</li>
+                        <li>Usamos <code>position: absolute</code> junto con <code>top</code> y <code>right</code> para posicionar la etiqueta.</li>
+                        <li>Hemos añadido animaciones y efectos de hover para mejorar la interactividad.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
