@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con Etiquetas y Enlaces</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .example {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .example:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-title {
+            font-size: 1.4rem;
+            color: #2575fc;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn {
+            position: relative;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: visible;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        /* Ejemplo 1: Etiqueta con enlace como parte del botón */
+        .tag-link {
+            position: absolute;
+            top: -12px;
+            right: -15px;
+            background-color: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            animation: pulse 1.5s infinite;
+            z-index: 10;
+        }
+        
+        .tag-link:hover {
+            background-color: #ff2e43;
+        }
+        
+        /* Ejemplo 2: Botón con etiqueta y enlace separado */
+        .badge-link {
+            display: inline-block;
+            margin-left: 10px;
+            background-color: #2ed573;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        .badge-link:hover {
+            background-color: #25b560;
+        }
+        
+        /* Ejemplo 3: Botón con etiqueta de enlace externo */
+        .external-tag::after {
+            content: "↗";
+            font-size: 14px;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+        
+        /* Ejemplo 4: Etiqueta con enlace en tooltip */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip {
+            visibility: hidden;
+            width: 180px;
+            background-color: #ff9f43;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -90px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+        
+        .tooltip a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #ff9f43 transparent transparent transparent;
+        }
+        
+        /* Animación de pulso */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .code {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border-left: 4px solid #007BFF;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Botones con Etiquetas y Enlaces</h1>
+            <p class="description">
+                Ejemplos de cómo añadir enlaces a otras páginas en las etiquetas de botones.
+            </p>
+        </header>
+        
+        <div class="examples-grid">
+            <!-- Ejemplo 1 -->
+            <div class="example">
+                <h2 class="example-title">Etiqueta con Enlace Independiente</h2>
+                <div class="button-container">
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn">Ver Características</button>
+                        <a href="https://www.example.com/nuevo" class="tag-link" target="_blank">Nuevo</a>
+                    </div>
+                </div>
+                <div class="code">
+                    &lt;div style="position: relative; display: inline-block;"&gt;<br>
+                    &nbsp;&nbsp;&lt;button class="btn"&gt;Ver Características&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&lt;a href="https://www.example.com/nuevo" class="tag-link" target="_blank"&gt;Nuevo&lt;/a&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+            
+            <!-- Ejemplo 2 -->
+            <div class="example">
+                <h2 class="example-title">Botón con Etiqueta y Enlace Separado</h2>
+                <div class="button-container">
+                    <button class="btn">Producto Premium</button>
+                    <a href="https://www.example.com/premium" class="badge-link" target="_blank">Ver Detalles</a>
+                </div>
+                <div class="code">
+                    &lt;button class="btn"&gt;Producto Premium&lt;/button&gt;<br>
+                    &lt;a href="https://www.example.com/premium" class="badge-link" target="_blank"&gt;Ver Detalles&lt;/a&gt;
+                </div>
+            </div>
+            
+            <!-- Ejemplo 3 -->
+            <div class="example">
+                <h2 class="example-title">Botón con Enlace Externo</h2>
+                <div class="button-container">
+                    <a href="https://www.example.com/external" class="btn external-tag" target="_blank">Recurso Externo</a>
+                </div>
+                <div class="code">
+                    &lt;a href="https://www.example.com/external" class="btn external-tag" target="_blank"&gt;<br>
+                    &nbsp;&nbsp;Recurso Externo<br>
+                    &lt;/a&gt;
+                </div>
+            </div>
+            
+            <!-- Ejemplo 4 -->
+            <div class="example">
+                <h2 class="example-title">Tooltip con Enlace</h2>
+                <div class="button-container">
+                    <div class="tooltip-container">
+                        <button class="btn">Oferta Especial</button>
+                        <div class="tooltip">
+                            <p>¡Aprovecha ahora! <a href="https://www.example.com/oferta" target="_blank">Ver términos</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code">
+                    &lt;div class="tooltip-container"&gt;<br>
+                    &nbsp;&nbsp;&lt;button class="btn"&gt;Oferta Especial&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="tooltip"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;¡Aprovecha ahora! &lt;a href="https://www.example.com/oferta" target="_blank"&gt;Ver términos&lt;/a&gt;&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+            
+            <!-- Ejemplo 5 -->
+            <div class="example">
+                <h2 class="example-title">Múltiples Enlaces en Etiquetas</h2>
+                <div class="button-container">
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn">Compra Ahora</button>
+                        <a href="https://www.example.com/descuento" class="tag-link" target="_blank" style="top: -12px; left: -15px; right: auto; background-color: #2ed573;">-20%</a>
+                        <a href="https://www.example.com/envio" class="tag-link" target="_blank" style="top: auto; bottom: -12px; right: -15px; background-color: #ffa502;">Envío Gratis</a>
+                    </div>
+                </div>
+                <div class="code">
+                    &lt;div style="position: relative; display: inline-block;"&gt;<br>
+                    &nbsp;&nbsp;&lt;button class="btn"&gt;Compra Ahora&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&lt;a href="https://www.example.com/descuento" class="tag-link" target="_blank"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;style="top: -12px; left: -15px; right: auto; background-color: #2ed573;"&gt;-20%&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&lt;a href="https://www.example.com/envio" class="tag-link" target="_blank"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;style="top: auto; bottom: -12px; right: -15px; background-color: #ffa502;"&gt;Envío Gratis&lt;/a&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+            
+            <!-- Ejemplo 6 -->
+            <div class="example">
+                <h2 class="example-title">Botón con Enlace Principal y Secundario</h2>
+                <div class="button-container">
+                    <a href="https://www.example.com/principal" class="btn" target="_blank">Descargar Ahora</a>
+                    <div style="font-size: 12px; margin-top: 10px;">
+                        <a href="https://www.example.com/alternativas" style="color: white; text-decoration: underline;" target="_blank">Ver otras opciones</a>
+                    </div>
+                </div>
+                <div class="code">
+                    &lt;a href="https://www.example.com/principal" class="btn" target="_blank"&gt;Descargar Ahora&lt;/a&gt;<br>
+                    &lt;div style="font-size: 12px; margin-top: 10px;"&gt;<br>
+                    &nbsp;&nbsp;&lt;a href="https://www.example.com/alternativas" <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;style="color: white; text-decoration: underline;" target="_blank"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Ver otras opciones<br>
+                    &nbsp;&nbsp;&lt;/a&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Ejemplos de botones con etiquetas que incluyen enlaces a otras páginas</p>
+    </footer>
+</body>
+</html>
