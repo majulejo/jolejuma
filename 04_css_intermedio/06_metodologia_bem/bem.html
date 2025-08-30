@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología BEM - Ingredientes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Estilos BEM para las listas */
+        .lista {
+            border: 2px solid #b1b7b9;
+            border-radius: 10px;
+            padding: 20px 40px 20px 50px;
+            margin-bottom: 25px;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+        
+        .lista:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lista--vieja {
+            opacity: 0.6;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        
+        .lista--vieja::after {
+            content: "LISTA VIEJA";
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        
+        .lista__item {
+            color: #27ae60;
+            margin: 12px 0;
+            padding: 8px 5px;
+            border-bottom: 1px dashed #ecf0f1;
+            position: relative;
+            padding-left: 30px;
+            list-style: none; /* Eliminamos el estilo por defecto */
+        }
+        
+        /* Simulamos disclosure-closed con pseudo-elementos para mejor compatibilidad */
+        .lista__item::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .item--importante {
+            color: #2980b9;
+            font-weight: bold;
+            background-color: #e8f4fd;
+            border-radius: 5px;
+            padding-left: 35px;
+            border-bottom: none;
+        }
+        
+        .item--importante::before {
+            content: "❗";
+            color: #f39c12;
+        }
+        
+        .item--danino {
+            color: #c0392b;
+            background-color: #fdedec;
+            border-radius: 5px;
+            padding-left: 35px;
+            border-bottom: none;
+        }
+        
+        .item--danino::before {
+            content: "⚠";
+            color: #e74c3c;
+        }
+        
+        .info-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .browser-support {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .browser {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+        
+        .browser-icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .supported {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .unsupported {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .lista {
+                padding: 15px 20px 15px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingredientes</h1>
+    <p class="subtitle">Usando metodología BEM y estilos avanzados para listas</p>
+    
+    <div class="container">
+        <ul class="lista">
+            <li class="lista__item item--danino">Sal (dañino)</li>
+            <li class="lista__item">Berenjenas</li>
+            <li class="lista__item">Tomates</li>
+            <li class="lista__item item--importante">Aceite (importante)</li>
+            <li class="lista__item">Pepinos</li>
+        </ul>
+        
+        <ul class="lista lista--vieja">
+            <li class="lista__item item--danino">Sal (dañino)</li>
+            <li class="lista__item">Berenjenas</li>
+            <li class="lista__item">Tomates</li>
+            <li class="lista__item item--importante">Aceite (importante)</li>
+            <li class="lista__item">Pepinos</li>
+        </ul>
+        
+        <ul class="lista">
+            <li class="lista__item item--danino">Sal (dañino)</li>
+            <li class="lista__item">Berenjenas</li>
+            <li class="lista__item">Tomates</li>
+            <li class="lista__item item--importante">Aceite (importante)</li>
+            <li class="lista__item">Pepinos</li>
+        </ul>
+        
+        <div class="info-box">
+            <h3>¿Qué hace <code>list-style: disclosure-closed</code>?</h3>
+            <p>Esta propiedad CSS cambia las viñetas de la lista a un triángulo cerrado (▶), que normalmente se usa para indicar elementos colapsables. Sin embargo, tiene compatibilidad limitada (solo funciona en Firefox).</p>
+            <p>En esta demostración, hemos usado pseudo-elementos para simular el mismo efecto con mejor compatibilidad entre navegadores.</p>
+        </div>
+        
+        <div class="browser-support">
+            <div class="browser">
+                <div class="browser-icon">🌐</div>
+                <div>Firefox</div>
+                <div class="supported">Soportado</div>
+            </div>
+            <div class="browser">
+                <div class="browser-icon">🌐</div>
+                <div>Chrome</div>
+                <div class="unsupported">No soportado</div>
+            </div>
+            <div class="browser">
+                <div class="browser-icon">🌐</div>
+                <div>Safari</div>
+                <div class="unsupported">No soportado</div>
+            </div>
+            <div class="browser">
+                <div class="browser-icon">🌐</div>
+                <div>Edge</div>
+                <div class="unsupported">No soportado</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
