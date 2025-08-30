@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Queries Demo</title>
+    <style>
+        /* Variables y estilos base */
+        :root {
+            --primary: #2563eb;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: var(--dark);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider-container label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        input[type="range"] {
+            width: 150px;
+        }
+        
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            resize: horizontal;
+            min-height: 250px;
+            min-width: 250px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .container-main {
+            border-color: var(--primary);
+            container-type: inline-size;
+            container-name: main;
+        }
+        
+        .container-texto {
+            border-color: var(--success);
+            container-type: inline-size;
+            container-name: texto;
+        }
+        
+        .container-mar {
+            border-color: var(--info);
+            container-type: inline-size;
+            container-name: mar;
+        }
+        
+        .container-tierra {
+            border-color: var(--warning);
+            container-type: inline-size;
+            container-name: tierra;
+        }
+        
+        .container-fuego {
+            border-color: var(--danger);
+            container-type: inline-size;
+            container-name: fuego;
+        }
+        
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid currentColor;
+        }
+        
+        .container-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: currentColor;
+        }
+        
+        .container-size {
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* Estilos base para el contenido */
+        .container-main p {
+            margin: 15px 0;
+            padding: 15px;
+            font-size: 14px;
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .container-texto ul, 
+        .container-mar ul, 
+        .container-tierra ul {
+            list-style: none;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #dcfce7;
+            color: #14532d;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            transition: var(--transition);
+        }
+        
+        .container-texto li, 
+        .container-mar li, 
+        .container-tierra li {
+            padding: 8px 5px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .container-texto li:last-child, 
+        .container-mar li:last-child, 
+        .container-tierra li:last-child {
+            border-bottom: none;
+        }
+        
+        .container-fuego ol {
+            list-style: none;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #fee2e2;
+            color: #7f1d1d;
+            border-radius: 8px;
+            border-left: 4px solid var(--danger);
+            transition: var(--transition);
+            counter-reset: fire-counter;
+        }
+        
+        .container-fuego li {
+            padding: 8px 5px 8px 25px;
+            position: relative;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .container-fuego li:before {
+            counter-increment: fire-counter;
+            content: counter(fire-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--danger);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .container-fuego li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Container Queries */
+        @container main (max-width: 500px) {
+            .container-main p {
+                font-size: 12px;
+                background-color: #bfdbfe;
+                color: #1e40af;
+                padding: 10px;
+            }
+        }
+        
+        @container texto (max-width: 500px) {
+            .container-texto ul {
+                background-color: #bbf7d0;
+                color: #15803d;
+            }
+        }
+        
+        @container mar (max-width: 500px) {
+            .container-mar ul {
+                background-color: #93c5fd;
+                color: #1e40af;
+            }
+        }
+        
+        @container tierra (max-width: 500px) {
+            .container-tierra ul {
+                background-color: #fde68a;
+                color: #92400e;
+            }
+        }
+        
+        @container fuego (max-width: 500px) {
+            .container-fuego ol {
+                background-color: #fecaca;
+                color: #991b1b;
+                width: 100%;
+            }
+            
+            .container-fuego li {
+                padding: 6px 5px 6px 22px;
+            }
+            
+            .container-fuego li:before {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+        }
+        
+        /* Responsive general */
+        @media (max-width: 768px) {
+            .container-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                resize: vertical;
+                min-width: auto;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        .info-box {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .info-text {
+            margin-bottom: 15px;
+        }
+        
+        .info-highlight {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Container Queries Demo</h1>
+        <p class="subtitle">Una demostración práctica de cómo funcionan las Container Queries en CSS. Cambia el tamaño de cada contenedor para ver cómo responden sus estilos.</p>
+        
+        <div class="controls">
+            <div class="slider-container">
+                <label for="globalSize">Tamaño global:</label>
+                <input type="range" id="globalSize" min="250" max="800" value="400">
+            </div>
+            <button id="resetBtn">Reiniciar tamaños</button>
+        </div>
+    </header>
+    
+    <div class="container-grid">
+        <div class="container container-main">
+            <div class="container-header">
+                <div class="container-title" style="color: #2563eb;">Contenedor Principal</div>
+                <div class="container-size">400px</div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate optio porro cumque repellat ut distinctio facilis explicabo debitis, eaque consequatur quidem nisi, placeat, maxime vitae error amet quasi numquam ad!
+            </p>
+        </div>
+        
+        <div class="container container-texto">
+            <div class="container-header">
+                <div class="container-title" style="color: #10b981;">Contenedor Texto</div>
+                <div class="container-size">400px</div>
+            </div>
+            <ul>
+                <li>Texto 1</li>
+                <li>Texto 2</li>
+                <li>Texto 3</li>
+                <li>Texto 4</li>
+            </ul>
+        </div>
+        
+        <div class="container container-mar">
+            <div class="container-header">
+                <div class="container-title" style="color: #3b82f6;">Contenedor Mar</div>
+                <div class="container-size">400px</div>
+            </div>
+            <ul>
+                <li>Mar 1</li>
+                <li>Mar 2</li>
+                <li>Mar 3</li>
+                <li>Mar 4</li>
+            </ul>
+        </div>
+        
+        <div class="container container-tierra">
+            <div class="container-header">
+                <div class="container-title" style="color: #f59e0b;">Contenedor Tierra</div>
+                <div class="container-size">400px</div>
+            </div>
+            <ul>
+                <li>Tierra 1</li>
+                <li>Tierra 2</li>
+                <li>Tierra 3</li>
+                <li>Tierra 4</li>
+            </ul>
+        </div>
+        
+        <div class="container container-fuego">
+            <div class="container-header">
+                <div class="container-title" style="color: #ef4444;">Contenedor Fuego</div>
+                <div class="container-size">400px</div>
+            </div>
+            <ol>
+                <li>Fuego 1</li>
+                <li>Fuego 2</li>
+                <li>Fuego 3</li>
+                <li>Fuego 4</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h2 class="info-title">¿Qué son las Container Queries?</h2>
+        <p class="info-text">Las Container Queries son una característica de CSS que permite aplicar estilos a un elemento basedo en el tamaño de su contenedor padre, en lugar de basarse en el tamaño del viewport (como lo hacen las Media Queries).</p>
+        
+        <p class="info-text">Esto es especialmente útil para componentes reutilizables que pueden aparecer en diferentes partes de una layout con diferentes tamaños disponibles.</p>
+        
+        <div class="info-highlight">
+            /* Definir el contenedor */<br>
+            .container {<br>
+            &nbsp;&nbsp;container-type: inline-size;<br>
+            &nbsp;&nbsp;container-name: mi-contenedor;<br>
+            }<br><br>
+            
+            /* Aplicar estilos según el tamaño del contenedor */<br>
+            @container mi-contenedor (max-width: 500px) {<br>
+            &nbsp;&nbsp;.elemento {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;/* Estilos para contenedores pequeños */<br>
+            &nbsp;&nbsp;}<br>
+            }
+        </div>
+    </div>
+    
+    <footer>
+        <p>Demo de Container Queries - CSS Moderno</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const containers = document.querySelectorAll('.container');
+            const globalSizeSlider = document.getElementById('globalSize');
+            const resetBtn = document.getElementById('resetBtn');
+            
+            // Actualizar el tamaño mostrado en cada contenedor
+            function updateSizeDisplays() {
+                containers.forEach(container => {
+                    const sizeDisplay = container.querySelector('.container-size');
+                    const width = Math.floor(container.getBoundingClientRect().width);
+                    sizeDisplay.textContent = `${width}px`;
+                    
+                    // Cambiar color cuando está por debajo del breakpoint
+                    if (width <= 500) {
+                        sizeDisplay.style.backgroundColor = '#ef4444';
+                        sizeDisplay.style.color = 'white';
+                    } else {
+                        sizeDisplay.style.backgroundColor = '';
+                        sizeDisplay.style.color = '';
+                    }
+                });
+            }
+            
+            // Inicializar los displays de tamaño
+            updateSizeDisplays();
+            
+            // Configurar el slider global
+            globalSizeSlider.addEventListener('input', function() {
+                const size = this.value + 'px';
+                containers.forEach(container => {
+                    container.style.width = size;
+                });
+                updateSizeDisplays();
+            });
+            
+            // Configurar el botón de reinicio
+            resetBtn.addEventListener('click', function() {
+                containers.forEach(container => {
+                    container.style.width = '400px';
+                });
+                globalSizeSlider.value = 400;
+                updateSizeDisplays();
+            });
+            
+            // Actualizar los displays cuando se cambia el tamaño de ventana
+            window.addEventListener('resize', updateSizeDisplays);
+            
+            // Actualizar los displays cuando se redimensiona un contenedor
+            const resizeObserver = new ResizeObserver(entries => {
+                updateSizeDisplays();
+            });
+            
+            containers.forEach(container => {
+                resizeObserver.observe(container);
+            });
+        });
+    </script>
+</body>
+</html>
